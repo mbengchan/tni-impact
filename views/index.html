@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <!-- <v-container>Hello world</v-container> -->
+
+        <v-dialog v-model="dialog" persistent>
+            <v-card width="100hv">
+                <!-- <v-toolbar dark color="primary">
+                    <v-toolbar-title>Thank You For Downloading Rhapsody of Realities</v-toolbar-title>
+                </v-toolbar> -->
+                <!-- <v-card-title>
+                    <span class="headline">Want To Know More About Pastor Chris?</span>
+                </v-card-title> -->
+                <v-layout row wrap>
+                    <v-flex md7 sm12 xs12>
+                        <v-img src="/images/pastor-chris.png" height="100%" />
+                    </v-flex>
+                    <v-flex md5 sm12 xs12>
+                        <v-card-text class="text-center px-8">
+                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
+                            <h4>Know more about the man of God</h4>
+
+                            <v-form class="pt-6">
+                                <v-text-field outlined label="Name *"></v-text-field>
+                                <v-text-field outlined label="Email address *"></v-text-field>
+                                <v-text-field outlined label="Phone number *"></v-text-field>
+                            </v-form>
+                        </v-card-text>
+
+                        <v-card-actions class="px-12 mb-5 mx-12">
+                            <v-btn rounded block color="red" dark>Submit</v-btn>
+                        </v-card-actions>
+                    </v-flex>
+                </v-layout>
+                <!-- <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="red darken-1" text @click="dialog = false">No</v-btn>
+                    <v-btn color="green darken-1" text @click="dialog = false">Yes</v-btn>
+                </v-card-actions> -->
+            </v-card>
+          </v-dialog>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+          return {
+            dialog: true
+          }
+      },
+      created() {
+        this.triggerDownload()
+      },
+      methods: {
+          triggerDownload() {
+            fetch(`/download`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const link = document.createElement('a')
+                link.href = URL.createObjectURL(blob)
+                link.download = "Test file"
+                link.click()
+                URL.revokeObjectURL(link.href)
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+          }
+      }
+    })
+  </script>
+</body>
+</html>
