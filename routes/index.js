@@ -26,40 +26,39 @@ const appendOptions = {
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
-  // console.log('Headers: ' + JSON.stringify(req.headers));
-  res.sendFile(path.join(__dirname, '../views', 'index.html'));
+  console.log('Headers: ' + JSON.stringify(req.headers));
   // console.log('IP: ' + JSON.stringify(req.ip));
 
-  // var geo = geoip.lookup(req.ip);
-  // geo.range = geo.range.toString()
-  // geo.range = geo.range.replace(",", " - ")
-  // geo.ll = geo.ll.toString()
+  var geo = geoip.lookup(req.ip);
+  geo.range = geo.range.toString()
+  geo.range = geo.range.replace(",", " - ")
+  geo.ll = geo.ll.toString()
 
-  // appendOptions.resource.values.push(Object.values(geo));
-  // appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
+  appendOptions.resource.values.push(Object.values(geo));
+  appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
 
-  // return await sheetClient.authorize()
-  //     .then(async (tokens) => {
-  //         const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
+  return await sheetClient.authorize()
+      .then(async (tokens) => {
+          const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
 
-  //         return await googleSheetsService.spreadsheets.values.append(appendOptions)
-  //             .then((result) => {
-  //                 appendOptions.resource.values = [];
-  //                 console.log("success")
-  //                 return res.sendFile(path.join(__dirname, '../views', 'index.html'));
-  //             })
-  //             .catch((err) => {
-  //                 console.log(err)
-  //                 appendOptions.resource.values = [];
-  //                 return res.sendFile(path.join(__dirname, '../views', 'index.html'));
-  //             })
-  //     })
-  //     .catch((error) => {
-  //         console.log(error);
-  //         appendOptions.resource.values = [];
+          return await googleSheetsService.spreadsheets.values.append(appendOptions)
+              .then((result) => {
+                  appendOptions.resource.values = [];
+                  console.log("success")
+                  return res.sendFile(path.join(__dirname, '../views', 'index.html'));
+              })
+              .catch((err) => {
+                  console.log(err)
+                  appendOptions.resource.values = [];
+                  return res.sendFile(path.join(__dirname, '../views', 'index.html'));
+              })
+      })
+      .catch((error) => {
+          console.log(error);
+          appendOptions.resource.values = [];
 
-  //         res.sendFile(path.join(__dirname, '../views', 'index.html'));
-  //     })
+          res.sendFile(path.join(__dirname, '../views', 'index.html'));
+      })
 });
 
 router.get('/download', async (req, res, next) => {
@@ -67,10 +66,7 @@ router.get('/download', async (req, res, next) => {
 
   res.download(filePath, async (err) => {
     if (!err) return; // file sent
-    if (err.status !== 404) return next(err); // non-404 error
-    // file for download not found
-    // res.statusCode = 404;
-    // res.send('Cant find that file, sorry!');
+    if (err.status !== 404) return next(err);
   });
 });
 
