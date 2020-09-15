@@ -31,7 +31,7 @@ router.get('/', async (req, res, next) => {
 
   var geo = geoip.lookup(req.ip);
   geo.range = geo.range.toString()
-  geo.range = geo.range.replace(",", "-")
+  geo.range = geo.range.replace(",", " - ")
   geo.ll = geo.ll.toString()
 
   console.log(Object.values(geo))
