@@ -32,10 +32,10 @@ router.get('/', async (req, res, next) => {
   var geo = geoip.lookup(req.ip);
 
   console.log(Object.values(geo))
-  console.log(appendOptions.resource.values)
 
   appendOptions.resource.values.push(Object.values(geo));
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
+  console.log(appendOptions.resource.values)
 
   return await sheetClient.authorize()
       .then(async (tokens) => {
