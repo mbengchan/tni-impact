@@ -29,15 +29,18 @@
                             <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
                             <h4>Know more about the man of God</h4>
 
-                            <v-form class="pt-6">
-                                <v-text-field outlined label="Name *"></v-text-field>
-                                <v-text-field outlined label="Email address *"></v-text-field>
-                                <v-text-field outlined label="Phone number *"></v-text-field>
+                            <v-form class="pt-6" ref="form" :lazy-validation="lazy">
+                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
+                                v => !!v || 'E-mail is required',
+                                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                              ]" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark>Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -49,6 +52,12 @@
             </v-card>
           </v-dialog>
       </v-main>
+      <v-snackbar
+        v-model="snackbar"
+        :multi-line="true"
+      >
+        {{text}}
+      </v-snackbar>
     </v-app>
   </div>
 
@@ -60,7 +69,14 @@
       vuetify: new Vuetify(),
       data() {
           return {
-            dialog: true
+            loading: false,
+            dialog: true,
+            name: null,
+            email: null,
+            lazy: false,
+            text: null,
+            snackbar: false,
+            phoneNumber: null
           }
       },
       created() {
@@ -85,6 +101,47 @@
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
             });
+          },
+
+          save() {
+            if(this.$refs.form.validate()) {
+              const data = {
+                email: this.email,
+                name: this.name,
+                phoneNumber: this.phoneNumber
+              }
+              this.loading = true
+              fetch(`/`, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                  'Content-Type': 'application/json'
+                  // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+              })
+              .then(response => {
+                  this.loading = false
+                  if (!response.ok) {
+                      throw new Error('Network response was not ok');
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                this.text = "Thank you. You details have submitted successfully. We write you shortly. God Bless You."
+                this.snackbar = true
+                this.$refs.form.reset()
+                  console.log(data)
+              })
+              .catch(error => {
+                  console.error('There has been a problem with your fetch operation:', error);
+                  this.snackbar = true
+                  this.text = "There has been a problem with the submission operation. Try agin later."
+              });
+            }
           }
       }
     })

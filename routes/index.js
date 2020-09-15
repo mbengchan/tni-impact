@@ -27,38 +27,39 @@ const appendOptions = {
 /* GET home page. */
 router.get('/', async (req, res, next) => {
   // console.log('Headers: ' + JSON.stringify(req.headers));
-  console.log('IP: ' + JSON.stringify(req.ip));
+  res.sendFile(path.join(__dirname, '../views', 'index.html'));
+  // console.log('IP: ' + JSON.stringify(req.ip));
 
-  var geo = geoip.lookup(req.ip);
-  geo.range = geo.range.toString()
-  geo.range = geo.range.replace(",", " - ")
-  geo.ll = geo.ll.toString()
+  // var geo = geoip.lookup(req.ip);
+  // geo.range = geo.range.toString()
+  // geo.range = geo.range.replace(",", " - ")
+  // geo.ll = geo.ll.toString()
 
-  appendOptions.resource.values.push(Object.values(geo));
-  appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
+  // appendOptions.resource.values.push(Object.values(geo));
+  // appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
 
-  return await sheetClient.authorize()
-      .then(async (tokens) => {
-          const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
+  // return await sheetClient.authorize()
+  //     .then(async (tokens) => {
+  //         const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
 
-          return await googleSheetsService.spreadsheets.values.append(appendOptions)
-              .then((result) => {
-                  appendOptions.resource.values = [];
-                  console.log("success")
-                  return res.sendFile(path.join(__dirname, '../views', 'index.html'));
-              })
-              .catch((err) => {
-                  console.log(err)
-                  appendOptions.resource.values = [];
-                  return res.sendFile(path.join(__dirname, '../views', 'index.html'));
-              })
-      })
-      .catch((error) => {
-          console.log(error);
-          appendOptions.resource.values = [];
+  //         return await googleSheetsService.spreadsheets.values.append(appendOptions)
+  //             .then((result) => {
+  //                 appendOptions.resource.values = [];
+  //                 console.log("success")
+  //                 return res.sendFile(path.join(__dirname, '../views', 'index.html'));
+  //             })
+  //             .catch((err) => {
+  //                 console.log(err)
+  //                 appendOptions.resource.values = [];
+  //                 return res.sendFile(path.join(__dirname, '../views', 'index.html'));
+  //             })
+  //     })
+  //     .catch((error) => {
+  //         console.log(error);
+  //         appendOptions.resource.values = [];
 
-          res.sendFile(path.join(__dirname, '../views', 'index.html'));
-      })
+  //         res.sendFile(path.join(__dirname, '../views', 'index.html'));
+  //     })
 });
 
 router.get('/download', async (req, res, next) => {
@@ -71,6 +72,38 @@ router.get('/download', async (req, res, next) => {
     // res.statusCode = 404;
     // res.send('Cant find that file, sorry!');
   });
+});
+
+router.post('/', async (req, res, next) => {
+  console.log('IP: ' + JSON.stringify(req.ip));
+  console.log(req.body)
+
+  appendOptions.resource.values.push(Object.values(req.body));
+  appendOptions.resource.values.push(req.ip.toString())
+  appendOptions.spreadsheetId = "16LARNya1pWp1_IrPH_wKDhILL7HSZuKt80rscx18L8U";
+
+  return await sheetClient.authorize()
+      .then(async (tokens) => {
+          const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
+
+          return await googleSheetsService.spreadsheets.values.append(appendOptions)
+              .then((result) => {
+                  appendOptions.resource.values = [];
+                  console.log("success")
+                  return res.json({message: "Information saved successfully."});
+              })
+              .catch((err) => {
+                  console.log(err)
+                  appendOptions.resource.values = [];
+                  return res.json({message: "Something went wrong. Try again."});
+              })
+      })
+      .catch((error) => {
+          console.log(error);
+          appendOptions.resource.values = [];
+
+          res.json({message: "Unhandled error."});
+      })
 });
 
 module.exports = router;
