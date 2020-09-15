@@ -31,7 +31,8 @@ router.get('/', async (req, res, next) => {
 
   var geo = geoip.lookup(req.ip);
 
-  console.log(geo)
+  console.log(Object.values(geo))
+  console.log(appendOptions.resource.values)
 
   appendOptions.resource.values.push(Object.values(geo));
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
@@ -47,7 +48,7 @@ router.get('/', async (req, res, next) => {
                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
               })
               .catch((err) => {
-                console.log(err)
+                // console.log(err)
                   appendOptions.resource.values = [];
                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
               })
