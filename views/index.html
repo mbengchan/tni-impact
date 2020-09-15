@@ -94,7 +94,7 @@
             .then(blob => {
                 const link = document.createElement('a')
                 link.href = URL.createObjectURL(blob)
-                link.download = "Test file"
+                link.download = "Rhapsody September 2020"
                 link.click()
                 URL.revokeObjectURL(link.href)
             })

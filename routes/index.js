@@ -37,8 +37,6 @@ router.get('/', async (req, res, next) => {
   var values = Object.values(geo)
   values.push(req.ip.replace("::ffff:", ""))
 
-  console.log(values)
-
   appendOptions.resource.values.push(values);
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
 
@@ -67,7 +65,7 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/download', async (req, res, next) => {
-  var filePath = path.join(__dirname, '../public', 'files/vsor_website.pdf');
+  var filePath = path.join(__dirname, '../public', 'files/september2020.pdf');
 
   res.download(filePath, async (err) => {
     if (!err) return; // file sent
