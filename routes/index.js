@@ -34,11 +34,8 @@ router.get('/', async (req, res, next) => {
   geo.range = geo.range.replace(",", " - ")
   geo.ll = geo.ll.toString()
 
-  console.log(Object.values(geo))
-
   appendOptions.resource.values.push(Object.values(geo));
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
-  console.log(appendOptions.resource.values)
 
   return await sheetClient.authorize()
       .then(async (tokens) => {
@@ -51,7 +48,7 @@ router.get('/', async (req, res, next) => {
                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
               })
               .catch((err) => {
-                // console.log(err)
+                  console.log(err)
                   appendOptions.resource.values = [];
                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
               })
