@@ -35,6 +35,7 @@ router.get('/', async (req, res, next) => {
   geo.ll = geo.ll.toString()
 
   appendOptions.resource.values.push(Object.values(geo));
+  appendOptions.resource.values.push(req.ip.replace("::ffff:", ""))
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
 
   return await sheetClient.authorize()
@@ -75,7 +76,7 @@ router.post('/', async (req, res, next) => {
   console.log(req.body)
 
   appendOptions.resource.values.push(Object.values(req.body));
-  appendOptions.resource.values.push(req.ip.toString())
+  appendOptions.resource.values.push(req.ip.replace("::ffff:", ""))
   appendOptions.spreadsheetId = "16LARNya1pWp1_IrPH_wKDhILL7HSZuKt80rscx18L8U";
 
   return await sheetClient.authorize()
