@@ -38,6 +38,8 @@ router.get('/', async (req, res, next) => {
   appendOptions.resource.values.push(req.ip.replace("::ffff:", ""))
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
 
+  console.log(appendOptions.resource.values)
+
   return await sheetClient.authorize()
       .then(async (tokens) => {
           const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
