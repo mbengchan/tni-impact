@@ -26,10 +26,12 @@ const appendOptions = {
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
-  console.log('Headers: ' + JSON.stringify(req.headers));
+  // console.log('Headers: ' + JSON.stringify(req.headers));
   console.log('IP: ' + JSON.stringify(req.ip));
 
   var geo = geoip.lookup(req.ip);
+
+  console.log(geo)
 
   appendOptions.resource.values.push(Object.values(geo));
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
@@ -41,9 +43,11 @@ router.get('/', async (req, res, next) => {
           return await googleSheetsService.spreadsheets.values.append(appendOptions)
               .then((result) => {
                   appendOptions.resource.values = [];
+                  console.log("success")
                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
               })
               .catch((err) => {
+                console.log(err)
                   appendOptions.resource.values = [];
                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
               })
