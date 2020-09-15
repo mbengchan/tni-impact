@@ -131,7 +131,7 @@
                   return response.json();
               })
               .then(data => {
-                this.text = "Thank you. You details have submitted successfully. We write you shortly. God Bless You."
+                this.text = data.message
                 this.snackbar = true
                 this.$refs.form.reset()
                   console.log(data)
