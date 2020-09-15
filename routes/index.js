@@ -30,6 +30,8 @@ router.get('/', async (req, res, next) => {
   console.log('IP: ' + JSON.stringify(req.ip));
 
   var geo = geoip.lookup(req.ip);
+  geo.range = geo.range.toString()
+  geo.ll = geo.ll.toString()
 
   console.log(Object.values(geo))
 
