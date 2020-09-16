@@ -1,0 +1,12 @@
+# pm2 uses ecosystem file to set env var
+# required for start and dev package.json scripts
+
+apps:
+  - script: ./bin/www
+    name: "tin-impact"
+    watch: true
+    port: 3000
+    env:
+      NODE_ENV: development
+    env_production:
+      NODE_ENV: production
