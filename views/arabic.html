@@ -5,7 +5,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download September Rhapsody in Arabic</title>
+  <title>تحميل رابسودي سبتمبر 2020 بالعربية</title>
 </head>
 <body>
   <div id="app">
@@ -27,21 +27,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">هل باركها القس كريس؟</h2>
+                            <h4>اعرف المزيد عن رجل الله</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
+                                <v-text-field outlined label="اسم *" v-model="name" :rules="[v => !!v || 'مطلوب اسم']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="عنوان البريد الالكترونى *" v-model="email" :rules="[
                                 v => !!v || 'E-mail is required',
-                                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                                v => /.+@.+\..+/.test(v) || 'يجب ان يكون البريد الاكتروني صحيح',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="رقم الهاتف *" v-model="phoneNumber" :rules="[v => !!v || 'رقم الهاتف مطلوب']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">إرسال</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -85,22 +85,22 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/download?lang=english`)
+            fetch(`/download?lang=arabic`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('لم تكن استجابة الشبكة جيدة');
                 }
                 return response.blob();
             })
             .then(blob => {
                 const link = document.createElement('a')
                 link.href = URL.createObjectURL(blob)
-                link.download = "September 2020 Inner"
+                link.download = "September 2020 Arabic Inner"
                 link.click()
                 URL.revokeObjectURL(link.href)
             })
             .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
+                console.error('حدثت مشكلة في عملية الجلب:', error);
             });
           },
 
@@ -110,7 +110,7 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "English"
+                language: "Arabic"
               }
               this.loading = true
               fetch(`/`, {
@@ -128,7 +128,7 @@
               .then(response => {
                   this.loading = false
                   if (!response.ok) {
-                      throw new Error('Network response was not ok');
+                      throw new Error('لم تكن استجابة الشبكة جيدة');
                   }
                   return response.json();
               })
@@ -139,9 +139,9 @@
                   console.log(data)
               })
               .catch(error => {
-                  console.error('There has been a problem with your fetch operation:', error);
+                  console.error('حدثت مشكلة في عملية الجلب:', error);
                   this.snackbar = true
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "كانت هناك مشكلة في عملية الإرسال. حاول مرة أخرى في وقت لاحق."
               });
             }
           }
