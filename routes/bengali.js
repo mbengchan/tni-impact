@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var path = require('path');
-var geoip = require('geoip-lite');
+const express = require('express');
+const router = express.Router();
+const path = require('path');
+const geoip = require('geoip-lite');
 const {google} = require('googleapis');
 const serviceAccount = require('../service-account.json');
 
@@ -26,48 +26,59 @@ const appendOptions = {
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
-    return res.sendFile(path.join(__dirname, '../views', 'index.html'));
-//   var geo = geoip.lookup(req.ip);
-//   geo.range = geo.range.toString()
-//   geo.range = geo.range.replace(",", " - ")
-//   geo.ll = geo.ll.toString()
+  let geo = geoip.lookup(req.ip);
+  geo.range = geo.range.toString()
+  geo.range = geo.range.replace(",", " - ")
+  geo.ll = geo.ll.toString()
 
-//   var values = Object.values(geo)
-//   values.push(req.ip.replace("::ffff:", ""))
-//   values.push("English")
+  let values = Object.values(geo)
+  values.push(req.ip.replace("::ffff:", ""))
+  values.push("English")
 
-//   appendOptions.resource.values.push(values);
-//   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
+  appendOptions.resource.values.push(values);
+  appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
 
-//   return await sheetClient.authorize()
-//       .then(async (tokens) => {
-//           const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
+  return await sheetClient.authorize()
+      .then(async (tokens) => {
+          const googleSheetsService = google.sheets({version: 'v4', auth: sheetClient});
 
-//           return await googleSheetsService.spreadsheets.values.append(appendOptions)
-//               .then((result) => {
-//                   appendOptions.resource.values = [];
-//                   console.log("success")
-//                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
-//               })
-//               .catch((err) => {
-//                   console.log(err)
-//                   appendOptions.resource.values = [];
-//                   return res.sendFile(path.join(__dirname, '../views', 'index.html'));
-//               })
-//       })
-//       .catch((error) => {
-//           console.log(error);
-//           appendOptions.resource.values = [];
+          return await googleSheetsService.spreadsheets.values.append(appendOptions)
+              .then((result) => {
+                  appendOptions.resource.values = [];
+                  console.log("success")
+                  return res.sendFile(path.join(__dirname, '../views', 'bengali.html'));
+              })
+              .catch((err) => {
+                  console.log(err)
+                  appendOptions.resource.values = [];
+                  return res.sendFile(path.join(__dirname, '../views', 'bengali.html'));
+              })
+      })
+      .catch((error) => {
+          console.log(error);
+          appendOptions.resource.values = [];
 
-//           res.sendFile(path.join(__dirname, '../views', 'index.html'));
-//       })
+          res.sendFile(path.join(__dirname, '../views', 'bengali.html'));
+      })
+});
+
+router.get('/download', async (req, res, next) => {
+    var lang = req.query.lang
+    var filePath = ""
+
+    filePath = path.join(__dirname, '../public', 'files/september2020.pdf');
+
+    res.download(filePath, async (err) => {
+        if (!err) return; // file sent
+        if (err.status !== 404) return next(err);
+    });
 });
 
 router.post('/', async (req, res, next) => {
   console.log('IP: ' + JSON.stringify(req.ip));
   console.log(req.body)
 
-  let values = Object.values(req.body)
+  var values = Object.values(req.body)
   values.push(req.ip.replace("::ffff:", ""))
 
   appendOptions.resource.values.push(values);
