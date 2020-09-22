@@ -33,7 +33,7 @@ router.get('/', async (req, res, next) => {
 
   let values = Object.values(geo)
   values.push(req.ip.replace("::ffff:", ""))
-  values.push("Bengali")
+  values.push("English")
 
   appendOptions.resource.values.push(values);
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
@@ -46,19 +46,19 @@ router.get('/', async (req, res, next) => {
               .then((result) => {
                   appendOptions.resource.values = [];
                   console.log("success")
-                  return res.sendFile(path.join(__dirname, '../views', 'bengali.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'vietnamese.html'));
               })
               .catch((err) => {
                   console.log(err)
                   appendOptions.resource.values = [];
-                  return res.sendFile(path.join(__dirname, '../views', 'bengali.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'vietnamese.html'));
               })
       })
       .catch((error) => {
           console.log(error);
           appendOptions.resource.values = [];
 
-          res.sendFile(path.join(__dirname, '../views', 'bengali.html'));
+          res.sendFile(path.join(__dirname, '../views', 'vietnamese.html'));
       })
 });
 
@@ -80,12 +80,12 @@ router.post('/', async (req, res, next) => {
               .then((result) => {
                   appendOptions.resource.values = [];
                   console.log("success")
-                  return res.json({message: "ধন্যবাদ. আপনার বিশদ সফলভাবে জমা দেওয়া হয়েছে। আমরা শীঘ্রই আপনাকে লিখতে। আল্লাহ্ তোমার মঙ্গল করুক."});
+                  return res.json({message: "Thank you. You details have submitted successfully. We write to you shortly. God Bless You."});
               })
               .catch((err) => {
                   console.log(err)
                   appendOptions.resource.values = [];
-                  return res.json({message: "জমা দেওয়ার কাজটিতে একটি সমস্যা হয়েছে a পরে আবার চেষ্টা করুন।"});
+                  return res.json({message: "There has been a problem with the submission operation. Try again later."});
               })
       })
       .catch((error) => {

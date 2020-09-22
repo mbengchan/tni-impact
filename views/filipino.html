@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download September Rhapsody in English</title>
-  <meta property="og:title" content="Download September Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>I-download ang September Rhapsody sa Filipino</title>
+  <meta property="og:title" content="I-download ang September Rhapsody sa Filipino">
+  <meta property="og:description" content="I-download ang iyong paboritong pang-araw-araw na debosyonal na Rhapsody of Realities upang bigyan ang iyong espiritu ng pag-angat araw-araw. Ang Rhapsody of Realities Christian Daily Devotional, ni Pastor Chris Oyakhilome, ay ang gabay sa pag-aaral ng Bibliya sa No. 1 sa buong mundo. Basahin ang Rhapsody of Realities araw-araw na debosyonal ni Pastor Chris, ang pangulo ng Loveworld Inc., aka Christ Embassy church.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="I-download ang iyong paboritong pang-araw-araw na debosyonal na Rhapsody of Realities upang bigyan ang iyong espiritu ng pag-angat araw-araw. Ang Rhapsody of Realities Christian Daily Devotional, ni Pastor Chris Oyakhilome, ay ang gabay sa pag-aaral ng Bibliya sa No. 1 sa buong mundo. Basahin ang Rhapsody of Realities araw-araw na debosyonal ni Pastor Chris, ang pangulo ng Loveworld Inc., aka Christ Embassy church.">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">Napagpala Na Ba ni Pastor Chris?</h2>
+                            <h4>Malaman ang nalalaman tungkol sa tao ng Diyos</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Pangalan *" v-model="name" :rules="[v => !!v || 'Pangalan ang kailangan']" required :disabled="loading"></v-text-field>
                                 <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'E-mail is required',
-                                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                                v => !!v || 'Kailangan ng e-mail',
+                                v => /.+@.+\..+/.test(v) || 'Dapat may bisa ang e-mail',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Numero ng telepono *" v-model="phoneNumber" :rules="[v => !!v || 'Kailangan ang numero ng telepono']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Ipasa</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -91,17 +91,17 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/files/english.pdf`)
+            fetch(`/files/filipino.pdf`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Hindi ok ang tugon sa network');
                 }
                 return response.blob();
             })
             .then(blob => {
                 const link = document.createElement('a')
                 link.href = URL.createObjectURL(blob)
-                link.download = "September 2020 English Inner"
+                link.download = "September 2020 Filipino Inner"
                 link.click()
                 URL.revokeObjectURL(link.href)
             })
@@ -116,7 +116,7 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "English"
+                language: "Filipino"
               }
               this.loading = true
               fetch(`/`, {
@@ -134,7 +134,7 @@
               .then(response => {
                   this.loading = false
                   if (!response.ok) {
-                      throw new Error('Network response was not ok');
+                      throw new Error('Hindi ok ang tugon sa network');
                   }
                   return response.json();
               })
@@ -147,7 +147,7 @@
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
                   this.snackbar = true
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "Nagkaroon ng problema sa pagpapatakbo ng pagsusumite. Subukan ulit mamaya."
               });
             }
           }

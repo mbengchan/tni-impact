@@ -91,7 +91,7 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/files/english.pdf`)
+            fetch(`/files/malay.pdf`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -101,7 +101,7 @@
             .then(blob => {
                 const link = document.createElement('a')
                 link.href = URL.createObjectURL(blob)
-                link.download = "September 2020 English Inner"
+                link.download = "September 2020 Malay Inner"
                 link.click()
                 URL.revokeObjectURL(link.href)
             })
@@ -116,7 +116,7 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "English"
+                language: "Malay"
               }
               this.loading = true
               fetch(`/`, {

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>সেপ্টেম্বর র্যাপসোডি বাংলায় ডাউনলোড করুন</title>
+  <meta property="og:title" content="সেপ্টেম্বর র্যাপসোডি বাংলায় ডাউনলোড করুন">
+  <meta property="og:description" content="প্রতিদিন আপনার অনুভূতিকে উত্তোলন করতে আপনার প্রিয় দৈনিক ভক্তিমূলক বাস্তবের র্যাপসোডি ডাউনলোড করুন। যাজক ক্রিস ওয়াখিলোমের রচয়িতা বাস্তবতার ক্রিশ্চিয়ান ডেইলি ভক্তিমূলকতা হলেন বিশ্বের এক নম্বর বাইবেল অধ্যয়ন গাইড। রিভারসোডি অফ রিয়েলটিস পড়ুন রোজ ভক্তিমূলক প্যাস্টর ক্রিস, লাভ ওয়ার্ল্ড ইনক এর প্রেসিডেন্ট, ওরফে খ্রিস্ট দূতাবাসের গির্জার।">
+  <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
+  <meta property="og:url" content="https://impact.tniglobal.org">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="প্রতিদিন আপনার অনুভূতিকে উত্তোলন করতে আপনার প্রিয় দৈনিক ভক্তিমূলক বাস্তবের র্যাপসোডি ডাউনলোড করুন। যাজক ক্রিস ওয়াখিলোমের রচয়িতা বাস্তবতার ক্রিশ্চিয়ান ডেইলি ভক্তিমূলকতা হলেন বিশ্বের এক নম্বর বাইবেল অধ্যয়ন গাইড। রিভারসোডি অফ রিয়েলটিস পড়ুন রোজ ভক্তিমূলক প্যাস্টর ক্রিস, লাভ ওয়ার্ল্ড ইনক এর প্রেসিডেন্ট, ওরফে খ্রিস্ট দূতাবাসের গির্জার।">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <!-- <v-container>Hello world</v-container> -->
+
+        <v-dialog v-model="dialog" persistent>
+            <v-card width="100hv">
+                <!-- <v-toolbar dark color="primary">
+                    <v-toolbar-title>Thank You For Downloading Rhapsody of Realities</v-toolbar-title>
+                </v-toolbar> -->
+                <!-- <v-card-title>
+                    <span class="headline">Want To Know More About Pastor Chris?</span>
+                </v-card-title> -->
+                <v-layout row wrap>
+                    <v-flex md7 sm12 xs12>
+                        <v-img src="/images/pastor-chris.png" height="100%" />
+                    </v-flex>
+                    <v-flex md5 sm12 xs12>
+                        <v-card-text class="text-center px-8">
+                            <h2 class="display-2">যাজক ক্রিস দ্বারা ধন্য হয়েছে?</h2>
+                            <h4>Theশ্বরের মানুষ সম্পর্কে আরও জানুন</h4>
+
+                            <v-form class="pt-6" ref="form" :lazy-validation="lazy">
+                                <v-text-field outlined label="নাম *" v-model="name" :rules="[v => !!v || 'নাম প্রয়োজন']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="ইমেল ঠিকানা *" v-model="email" :rules="[
+                                v => !!v || 'ই-মেইল প্রয়োজন',
+                                v => /.+@.+\..+/.test(v) || 'ইমেল বৈধ হতে হবে',
+                              ]" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="ফোন নম্বর *" v-model="phoneNumber" :rules="[v => !!v || 'ফোন নম্বর প্রয়োজন']" required :disabled="loading"></v-text-field>
+                            </v-form>
+                        </v-card-text>
+
+                        <v-card-actions class="px-12 mb-5 mx-12">
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">জমা দিন</v-btn>
+                        </v-card-actions>
+                    </v-flex>
+                </v-layout>
+                <!-- <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="red darken-1" text @click="dialog = false">No</v-btn>
+                    <v-btn color="green darken-1" text @click="dialog = false">Yes</v-btn>
+                </v-card-actions> -->
+            </v-card>
+          </v-dialog>
+      </v-main>
+      <v-snackbar
+        v-model="snackbar"
+        :multi-line="true"
+      >
+        {{text}}
+      </v-snackbar>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+          return {
+            loading: false,
+            dialog: true,
+            name: null,
+            email: null,
+            lazy: false,
+            text: null,
+            snackbar: false,
+            phoneNumber: null
+          }
+      },
+      created() {
+        this.triggerDownload()
+      },
+      methods: {
+          triggerDownload() {
+            fetch(`/files/bengali.pdf`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('নেটওয়ার্কের প্রতিক্রিয়া ঠিক ছিল না');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const link = document.createElement('a')
+                link.href = URL.createObjectURL(blob)
+                link.download = "September 2020 Bengali Inner"
+                link.click()
+                URL.revokeObjectURL(link.href)
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+          },
+
+          save() {
+            if(this.$refs.form.validate()) {
+              const data = {
+                email: this.email,
+                name: this.name,
+                phoneNumber: this.phoneNumber,
+                language: "Bengali"
+              }
+              this.loading = true
+              fetch(`/`, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                  'Content-Type': 'application/json'
+                  // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+              })
+              .then(response => {
+                  this.loading = false
+                  if (!response.ok) {
+                      throw new Error('Network response was not ok');
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                this.text = data.message
+                this.snackbar = true
+                this.$refs.form.reset()
+                  console.log(data)
+              })
+              .catch(error => {
+                  console.error('There has been a problem with your fetch operation:', error);
+                  this.snackbar = true
+                  this.text = "জমা দেওয়ার কাজটিতে একটি সমস্যা হয়েছে a পরে আবার চেষ্টা করুন।"
+              });
+            }
+          }
+      }
+    })
+  </script>
+</body>
+</html>
