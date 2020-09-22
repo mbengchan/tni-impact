@@ -70,6 +70,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
   <script>
     new Vue({
       el: '#app',
@@ -99,11 +100,7 @@
                 return response.blob();
             })
             .then(blob => {
-                const link = document.createElement('a')
-                link.href = URL.createObjectURL(blob)
-                link.download = "September 2020 Malay Inner"
-                link.click()
-                URL.revokeObjectURL(link.href)
+              saveAs(blob, "September 2020 Malay Inner", {type: 'application/pdf'});
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
