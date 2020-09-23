@@ -70,7 +70,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+  <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
   <script>
     new Vue({
       el: '#app',
@@ -92,7 +92,7 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/download?lang=arabic`)
+            fetch(`/files/arabic.pdf`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('لم تكن استجابة الشبكة جيدة');
@@ -116,7 +116,7 @@
                 language: "Arabic"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/arabic`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -143,8 +143,8 @@
               })
               .catch(error => {
                   console.error('حدثت مشكلة في عملية الجلب:', error);
-                  this.snackbar = true
                   this.text = "كانت هناك مشكلة في عملية الإرسال. حاول مرة أخرى في وقت لاحق."
+                  this.snackbar = true
               });
             }
           }

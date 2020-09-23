@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download September Rhapsody in English</title>
-  <meta property="og:title" content="Download September Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>செப்டம்பர் ராப்சோடியை தமிழில் பதிவிறக்குங்கள்</title>
+  <meta property="og:title" content="செப்டம்பர் ராப்சோடியை தமிழில் பதிவிறக்குங்கள்">
+  <meta property="og:description" content="ஒவ்வொரு நாளும் உங்கள் ஆவிக்கு ஒரு லிப்ட் கொடுக்க உங்களுக்கு பிடித்த தினசரி பக்தியான ராப்சோடி ஆஃப் ரியாலிட்டீஸ் பதிவிறக்கவும். பாஸ்டர் கிறிஸ் ஓயாகிலோம் எழுதிய கிறிஸ்டியன் டெய்லி பக்தி, உலகின் நம்பர் 1 பைபிள் படிப்பு வழிகாட்டியாகும். லவ்வொர்ல்ட் இன்க், கிறிஸ்ட் தூதரகம் தேவாலயத்தின் தலைவரான பாஸ்டர் கிறிஸ் தினசரி பக்தியுடன் ராப்சோடி ஆஃப் ரியாலிட்டிகளைப் படியுங்கள்.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="ஒவ்வொரு நாளும் உங்கள் ஆவிக்கு ஒரு லிப்ட் கொடுக்க உங்களுக்கு பிடித்த தினசரி பக்தியான ராப்சோடி ஆஃப் ரியாலிட்டீஸ் பதிவிறக்கவும். பாஸ்டர் கிறிஸ் ஓயாகிலோம் எழுதிய கிறிஸ்டியன் டெய்லி பக்தி, உலகின் நம்பர் 1 பைபிள் படிப்பு வழிகாட்டியாகும். லவ்வொர்ல்ட் இன்க், கிறிஸ்ட் தூதரகம் தேவாலயத்தின் தலைவரான பாஸ்டர் கிறிஸ் தினசரி பக்தியுடன் ராப்சோடி ஆஃப் ரியாலிட்டிகளைப் படியுங்கள்.">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">பாஸ்டர் கிறிஸால் ஆசீர்வதிக்கப்பட்டாரா?</h2>
+                            <h4>கடவுளின் மனிதனைப் பற்றி மேலும் தெரிந்து கொள்ளுங்கள்</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'E-mail is required',
-                                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                                <v-text-field outlined label="பெயர் *" v-model="name" :rules="[v => !!v || 'பெயர் தேவை']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="மின்னஞ்சல் முகவரி *" v-model="email" :rules="[
+                                v => !!v || 'மின்னஞ்சல் தேவை',
+                                v => /.+@.+\..+/.test(v) || 'மின்னஞ்சல் செல்லுபடியாகும்',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="தொலைபேசி எண் *" v-model="phoneNumber" :rules="[v => !!v || 'தொலைபேசி எண் தேவை']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">சமர்ப்பிக்கவும்</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -70,7 +70,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+  <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
   <script>
     new Vue({
       el: '#app',
@@ -144,7 +144,7 @@
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
                   this.snackbar = true
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "சமர்ப்பிக்கும் செயல்பாட்டில் சிக்கல் உள்ளது. பின்னர் மீண்டும் முயற்சிக்கவும்."
               });
             }
           }

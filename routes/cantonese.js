@@ -80,12 +80,12 @@ router.post('/', async (req, res, next) => {
               .then((result) => {
                   appendOptions.resource.values = [];
                   console.log("success")
-                  return res.json({message: "Thank you. You details have submitted successfully. We write to you shortly. God Bless You."});
+                  return res.json({message: "Gràcies. Les vostres dades s'han enviat correctament. Us escrivim en breu. Que deu et beneeixi."});
               })
               .catch((err) => {
                   console.log(err)
                   appendOptions.resource.values = [];
-                  return res.json({message: "There has been a problem with the submission operation. Try again later."});
+                  return res.json({message: "Hi ha hagut un problema amb l'operació d'enviament. Torna-ho a provar més tard."});
               })
       })
       .catch((error) => {

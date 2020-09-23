@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download September Rhapsody in English</title>
-  <meta property="og:title" content="Download September Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>Baixar Rapsódia de setembro em português...</title>
+  <meta property="og:title" content="Baixar Rapsódia de setembro em português...">
+  <meta property="og:description" content="Baixe o seu devocional diário favorito, a Rapsódia das Realidades, para dar uma guinada no seu espírito todos os dias. Rapsódia das realidades Christian Daily Devotional, do pastor Chris Oyakhilome, é o guia de estudo bíblico número 1 do mundo. Leia o devocional diário Rapsódia da realidade pelo pastor Chris, o presidente da Loveworld Inc., também conhecida como Igreja da Embaixada de Cristo.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="Baixe o seu devocional diário favorito, a Rapsódia das Realidades, para dar uma guinada no seu espírito todos os dias. Rapsódia das realidades Christian Daily Devotional, do pastor Chris Oyakhilome, é o guia de estudo bíblico número 1 do mundo. Leia o devocional diário Rapsódia da realidade pelo pastor Chris, o presidente da Loveworld Inc., também conhecida como Igreja da Embaixada de Cristo.">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">Foram abençoados <br /> pelo pastor Chris?</h2>
+                            <h4>Saiba mais sobre o homem de Deus</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'E-mail is required',
-                                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                                <v-text-field outlined label="Nome *" v-model="name" :rules="[v => !!v || 'Nome é obrigatório']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Endereço de e-mail *" v-model="email" :rules="[
+                                v => !!v || 'E-mail é obrigatório',
+                                v => /.+@.+\..+/.test(v) || 'E-mail deve ser válido',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Número de telefone *" v-model="phoneNumber" :rules="[v => !!v || 'Número de telefone obrigatório']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Enviar</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -70,7 +70,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+  <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
   <script>
     new Vue({
       el: '#app',
@@ -144,7 +144,7 @@
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
                   this.snackbar = true
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "Ocorreu um problema com a operação de envio. Tente mais tarde."
               });
             }
           }

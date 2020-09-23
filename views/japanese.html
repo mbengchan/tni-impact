@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download September Rhapsody in English</title>
-  <meta property="og:title" content="Download September Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>9月のラプソディを日本語でダウンロード</title>
+  <meta property="og:title" content="9月のラプソディを日本語でダウンロード">
+  <meta property="og:description" content="お気に入りの毎日の祈りのRhapsody of Realitiesをダウンロードして、毎日気分を盛り上げましょう。 クリスオヤキローム牧師のクリスチャンデイリーディボーショナルは、世界で一番の聖書研究ガイドです。 ラブワールドインクの代表であるキリスト大使館教会のクリス牧師（牧師）による、祈りを込めたRhapsody of Realitiesを毎日お読みください。">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="お気に入りの毎日の祈りのRhapsody of Realitiesをダウンロードして、毎日気分を盛り上げましょう。 クリスオヤキローム牧師のクリスチャンデイリーディボーショナルは、世界で一番の聖書研究ガイドです。 ラブワールドインクの代表であるキリスト大使館教会のクリス牧師（牧師）による、祈りを込めたRhapsody of Realitiesを毎日お読みください。">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">クリス牧師によって祝福されましたか</h2>
+                            <h4>神の人についてもっと知る</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'E-mail is required',
-                                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                                <v-text-field outlined label="名前 *" v-model="name" :rules="[v => !!v || '名前は必須です']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="電子メールアドレス *" v-model="email" :rules="[
+                                v => !!v || 'メールが必要です',
+                                v => /.+@.+\..+/.test(v) || 'メールアドレスは有効である必要があります',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="電話番号 *" v-model="phoneNumber" :rules="[v => !!v || '電話番号が必要です']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">参加する</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -70,7 +70,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+  <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
   <script>
     new Vue({
       el: '#app',
@@ -92,7 +92,7 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/files/janpanese.pdf`)
+            fetch(`/files/japanese.pdf`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -144,7 +144,7 @@
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
                   this.snackbar = true
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "送信操作で問題が発生しました。 あとでもう一度試してみてください。"
               });
             }
           }

@@ -62,7 +62,6 @@ router.get('/', async (req, res, next) => {
   });
 
 router.get('/download', async (req, res, next) => {
-    var lang = req.query.lang
     var filePath = ""
 
     filePath = path.join(__dirname, '../public', 'files/september2020arabic.pdf');
