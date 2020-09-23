@@ -47,7 +47,7 @@ app.use('/filipino', filipinoRouter);
 app.use('/french', frenchRouter);
 app.use('/german', germanRouter);
 app.use('/gujarati', gujaratiRouter);
-app.use('/idonessian', indonessiaRouter);
+app.use('/idonesian', indonessiaRouter);
 app.use('/italian', italianRouter);
 app.use('/japanese', japaneseRouter);
 app.use('/malay', malayRouter);
