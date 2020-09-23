@@ -92,7 +92,7 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/files/idonessian.pdf`)
+            fetch(`/files/indonesian.pdf`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -113,10 +113,10 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "Indonessian"
+                language: "Indonesian"
               }
               this.loading = true
-              fetch(`/idonessian`, {
+              fetch(`/indonesian`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',

@@ -46,19 +46,19 @@ router.get('/', async (req, res, next) => {
               .then((result) => {
                   appendOptions.resource.values = [];
                   console.log("success")
-                  return res.sendFile(path.join(__dirname, '../views', 'indonessia.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'indonesian.html'));
               })
               .catch((err) => {
                   console.log(err)
                   appendOptions.resource.values = [];
-                  return res.sendFile(path.join(__dirname, '../views', 'indonessia.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'indonesian.html'));
               })
       })
       .catch((error) => {
           console.log(error);
           appendOptions.resource.values = [];
 
-          res.sendFile(path.join(__dirname, '../views', 'indonessia.html'));
+          res.sendFile(path.join(__dirname, '../views', 'indonesian.html'));
       })
 });
 
