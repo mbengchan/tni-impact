@@ -33,16 +33,20 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">کیا مبارک ہو؟ <br /> پادری کرس کے ذریعہ</h2>
-                            <h4>خدا کے آدمی کے بارے میں مزید معلومات حاصل کریں</h4>
+                            <h2 class="display-2">
+                              کیا آپ نے پاسٹر کرس کے وسیلہ سے برکت پائی ھے؟ 
+                            </h2>
+                            <h4>
+                              مرد خدا کے بارے میں مزید جانیں
+                            </h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
                                 <v-text-field outlined label="نام *" v-model="name" :rules="[v => !!v || 'نام کی ضرورت ہے']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="ای میل اڈریس *" v-model="email" :rules="[
+                                <v-text-field outlined label="ای میل ایڈریس *" v-model="email" :rules="[
                                 v => !!v || 'ای میل کی ضرورت ہے',
                                 v => /.+@.+\..+/.test(v) || 'ای میل کو درست ہونا چاہئے',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="فون نمبر *" v-model="phoneNumber" :rules="[v => !!v || 'فون نمبر ضروری ہے']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="فون نمبر  *" v-model="phoneNumber" :rules="[v => !!v || 'فون نمبر ضروری ہے']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
