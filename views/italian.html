@@ -39,8 +39,8 @@
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
                                 <v-text-field outlined label="Nome *" v-model="name" :rules="[v => !!v || 'Il nome è obbligatorio']" required :disabled="loading"></v-text-field>
                                 <v-text-field outlined label="Indirizzo email *" v-model="email" :rules="[
-                                v => !!v || 'E-mail richiesta',
-                                v => /.+@.+\..+/.test(v) || 'L'email deve essere valida',
+                                v => !!v || 'Email richiesta',
+                                v => /.+@.+\..+/.test(v) || 'L\'email deve essere valida',
                               ]" required :disabled="loading"></v-text-field>
                                 <v-text-field outlined label="Numero di telefono *" v-model="phoneNumber" :rules="[v => !!v || 'Il numero di telefono è richiesto']" required :disabled="loading"></v-text-field>
                             </v-form>

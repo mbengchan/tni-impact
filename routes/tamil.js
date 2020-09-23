@@ -46,12 +46,12 @@ router.get('/', async (req, res, next) => {
               .then((result) => {
                   appendOptions.resource.values = [];
                   console.log("success")
-                  return res.sendFile(path.join(__dirname, '../views', 'filipino.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'tamil.html'));
               })
               .catch((err) => {
                   console.log(err)
                   appendOptions.resource.values = [];
-                  return res.sendFile(path.join(__dirname, '../views', 'filipino.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'tamil.html'));
               })
       })
       .catch((error) => {
