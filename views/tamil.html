@@ -92,19 +92,11 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/files/tamil.pdf`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.blob();
-            })
-            .then(blob => {
-              saveAs(blob, "September 2020 Tamil Inner", {type: 'application/pdf'});
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
+            let link = document.createElement('a');
+            link.href = "/files/September 2020 Tamil Inner.pdf";
+            link.download = 'September 2020 Tamil Inner.pdf';
+            link.dispatchEvent(new MouseEvent('click'));
+            URL.revokeObjectURL(link.href)
           },
 
           save() {

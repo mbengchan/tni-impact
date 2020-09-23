@@ -26,6 +26,7 @@ const appendOptions = {
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
+    return res.sendFile(path.join(__dirname, '../views', 'index.html'));
   var geo = geoip.lookup(req.ip);
   geo.range = geo.range.toString()
   geo.range = geo.range.replace(",", " - ")
