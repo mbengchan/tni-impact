@@ -33,12 +33,16 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">هل باركها القس كريس؟</h2>
-                            <h4>اعرف المزيد عن رجل الله</h4>
+                            <h2 class="display-2">
+                              هل تباركتَ من خلال الراعي كريس؟
+                            </h2>
+                            <h4>
+                              تعرّف أكثر عن رجل الإله
+                            </h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="اسم *" v-model="name" :rules="[v => !!v || 'مطلوب اسم']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="عنوان البريد الالكترونى *" v-model="email" :rules="[
+                                <v-text-field outlined label="الاسم *" v-model="name" :rules="[v => !!v || 'مطلوب اسم']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="البريد الإلكتروني *" v-model="email" :rules="[
                                 v => !!v || 'E-mail is required',
                                 v => /.+@.+\..+/.test(v) || 'يجب ان يكون البريد الاكتروني صحيح',
                               ]" required :disabled="loading"></v-text-field>
@@ -47,7 +51,7 @@
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">إرسال</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">تسجيل</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
