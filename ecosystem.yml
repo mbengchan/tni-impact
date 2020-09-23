@@ -3,7 +3,7 @@
 
 apps:
   - script: ./bin/www
-    name: "tin-impact"
+    name: "tni-impact"
     watch: true
     port: 3000
     env:
