@@ -33,7 +33,7 @@ router.get('/', async (req, res, next) => {
 
   let values = Object.values(geo)
   values.push(req.ip.replace("::ffff:", ""))
-  values.push("English")
+  values.push("French")
 
   appendOptions.resource.values.push(values);
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
