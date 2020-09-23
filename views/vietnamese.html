@@ -116,7 +116,7 @@
                 language: "Vietnamese"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/vietnamese`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -143,8 +143,8 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.snackbar = true
                   this.text = "Đã xảy ra sự cố với thao tác gửi. Thử lại sau."
+                  this.snackbar = true
               });
             }
           }

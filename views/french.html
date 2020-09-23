@@ -116,7 +116,7 @@
                 language: "French"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/french`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -143,8 +143,8 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.snackbar = true
                   this.text = "Il y a eu un problème avec l'opération de soumission. Réessayez plus tard."
+                  this.snackbar = true
               });
             }
           }

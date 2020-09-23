@@ -116,7 +116,7 @@
                 language: "Yoruba"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/yoruba`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -143,8 +143,8 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.snackbar = true
                   this.text = "Iṣoro kan wa pẹlu iṣẹ ifakalẹ. Gbiyanju lẹẹkansi nigbamii."
+                  this.snackbar = true
               });
             }
           }

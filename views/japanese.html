@@ -116,7 +116,7 @@
                 language: "Japanese"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/japanese`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -143,8 +143,8 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.snackbar = true
                   this.text = "送信操作で問題が発生しました。 あとでもう一度試してみてください。"
+                  this.snackbar = true
               });
             }
           }

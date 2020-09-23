@@ -116,7 +116,7 @@
                 language: "Urdu"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/urdu`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -143,8 +143,8 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.snackbar = true
                   this.text = "جمع کرانے کے عمل میں ایک مسئلہ درپیش ہے۔ بعد میں دوبارہ کوشش کریں۔"
+                  this.snackbar = true
               });
             }
           }

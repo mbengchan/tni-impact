@@ -92,7 +92,7 @@
       },
       methods: {
           triggerDownload() {
-            fetch(`/download?lang=gujarati`)
+            fetch(`/files/gujarati.pdf`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('નેટવર્ક પ્રતિસાદ બરાબર ન હતો');
@@ -116,7 +116,7 @@
                 language: "Gujarati"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/gujarati`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -143,8 +143,8 @@
               })
               .catch(error => {
                   console.error('તમારા ફેંચ operationપરેશનમાં સમસ્યા આવી છે:', error);
-                  this.snackbar = true
                   this.text = "સબમિશન operationપરેશનમાં સમસ્યા આવી છે. પછીથી ફરી પ્રયાસ કરો."
+                  this.snackbar = true
               });
             }
           }
