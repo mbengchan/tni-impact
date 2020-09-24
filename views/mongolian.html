@@ -33,12 +33,12 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Пастор Крисээс адислагдсан уу?</h2>
-                            <h4>Бурханы хүний талаар илүү ихийг мэдэх</h4>
+                            <h2 class="display-2">Та Крис Пастороор ерөөгдсөн үү?</h2>
+                            <h4>Бурханы хүний талаар илүү мэдэж аваарай</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
                                 <v-text-field outlined label="Нэр *" v-model="name" :rules="[v => !!v || 'Нэр шаардлагатай']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Имэйл хаяг *" v-model="email" :rules="[
+                                <v-text-field outlined label="Имейл хаяг *" v-model="email" :rules="[
                                 v => !!v || 'Имэйл оруулах шаардлагатай',
                                 v => /.+@.+\..+/.test(v) || 'И-мэйл хүчинтэй байх ёстой',
                               ]" required :disabled="loading"></v-text-field>
@@ -47,7 +47,7 @@
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Оруулах</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Илгээх</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
