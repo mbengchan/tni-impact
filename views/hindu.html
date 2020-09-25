@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download September Rhapsody in English</title>
-  <meta property="og:title" content="Download September Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>Download हिन्दू उर्दू में सितंबर राशी डाउनलोड करें</title>
+  <meta property="og:title" content="Download हिन्दू उर्दू में सितंबर राशी डाउनलोड करें">
+  <meta property="og:description" content="अपनी आत्मा को हर दिन एक लिफ्ट देने के लिए अपने पसंदीदा दैनिक भक्ति को वास्तविकता का डाउनलोड करें। पादरी क्रिस ओयाखिलोम द्वारा रियलिटी क्रिश्चियन डेली भक्ति के रैप्सोडी, दुनिया में नंबर 1 बाइबिल अध्ययन गाइड है। रीडर्सोडी ऑफ़ रियलिटी दैनिक भक्ति पास्टर क्रिस, लववर्ल्ड इंक के अध्यक्ष, उर्फ मसीह दूतावास चर्च द्वारा पढ़ें।">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="अपनी आत्मा को हर दिन एक लिफ्ट देने के लिए अपने पसंदीदा दैनिक भक्ति को वास्तविकता का डाउनलोड करें। पादरी क्रिस ओयाखिलोम द्वारा रियलिटी क्रिश्चियन डेली भक्ति के रैप्सोडी, दुनिया में नंबर 1 बाइबिल अध्ययन गाइड है। रीडर्सोडी ऑफ़ रियलिटी दैनिक भक्ति पास्टर क्रिस, लववर्ल्ड इंक के अध्यक्ष, उर्फ मसीह दूतावास चर्च द्वारा पढ़ें।">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">पाश्चर क्रिस द्वारा धन्य है?</h2>
+                            <h4>भगवान के आदमी के बारे में अधिक जानें</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'Email is required',
-                                v => /.+@.+\..+/.test(v) || 'Email must be valid',
+                                <v-text-field outlined label="नाम *" v-model="name" :rules="[v => !!v || 'नाम आवश्यक है']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="ईमेल पता *" v-model="email" :rules="[
+                                v => !!v || 'ईमेल जरुरी है',
+                                v => /.+@.+\..+/.test(v) || 'ईमेल मान्य होना चाहिए',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="फ़ोन नंबर *" v-model="phoneNumber" :rules="[v => !!v || 'फोन नंबर आवश्यक है']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">प्रस्तुत</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -92,25 +92,10 @@
       methods: {
           triggerDownload() {
             let link = document.createElement('a');
-            link.href = "/files/September 2020 English Inner.pdf";
-            link.download = 'September 2020 English Inner.pdf';
+            link.href = "/files/September 2020 Hindu Urdu Inner.pdf";
+            link.download = 'September 2020 Hindu Urdu Inner.pdf';
             link.dispatchEvent(new MouseEvent('click'));
             URL.revokeObjectURL(link.href)
-            // window.open('/files/english.pdf', '_blank');
-            // saveAs('http://localhost:3000/files/english.pdf', "September 2020 English Inner", {type: 'application/pdf'});
-            // fetch(`/files/english.pdf`)
-            // .then(response => {
-            //     if (!response.ok) {
-            //         throw new Error('Network response was not ok');
-            //     }
-            //     return response.blob();
-            // })
-            // .then(blob => {
-            //   saveAs(blob, "September 2020 English Inner", {type: 'application/pdf'});
-            // })
-            // .catch(error => {
-            //     console.error('There has been a problem with your fetch operation:', error);
-            // });
           },
 
           save() {
@@ -122,13 +107,12 @@
                 language: "English"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/hindu`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
                 headers: {
                   'Content-Type': 'application/json'
-                  // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 redirect: 'follow',
                 referrerPolicy: 'no-referrer',
@@ -149,7 +133,7 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "सबमिशन ऑपरेशन में समस्या आई है। बाद में पुन: प्रयास करें।"
                   this.snackbar = true
               });
             }

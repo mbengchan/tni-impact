@@ -33,7 +33,7 @@ router.get('/', async (req, res, next) => {
 
   var values = Object.values(geo)
   values.push(req.ip.replace("::ffff:", ""))
-  values.push("English")
+  values.push("Marathi")
 
   appendOptions.resource.values.push(values);
   appendOptions.spreadsheetId = "1I8y1TEjmqlXkOxZqn7jDBcgpMM0epFxmmyg5sP_V0js";
@@ -46,19 +46,19 @@ router.get('/', async (req, res, next) => {
               .then((result) => {
                   appendOptions.resource.values = [];
                   console.log("success")
-                  return res.sendFile(path.join(__dirname, '../views', 'index.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'marathi.html'));
               })
               .catch((err) => {
                   console.log(err)
                   appendOptions.resource.values = [];
-                  return res.sendFile(path.join(__dirname, '../views', 'index.html'));
+                  return res.sendFile(path.join(__dirname, '../views', 'marathi.html'));
               })
       })
       .catch((error) => {
           console.log(error);
           appendOptions.resource.values = [];
 
-          res.sendFile(path.join(__dirname, '../views', 'index.html'));
+          res.sendFile(path.join(__dirname, '../views', 'marathi.html'));
       })
 });
 
@@ -80,7 +80,7 @@ router.post('/', async (req, res, next) => {
               .then((result) => {
                   appendOptions.resource.values = [];
                   console.log("success")
-                  return res.json({message: "Thank you. You details have submitted successfully. We write to you shortly. God Bless You."});
+                  return res.json({message: "धन्यवाद. आपण तपशील यशस्वीरित्या सबमिट केले आहेत. आम्ही लवकरच आपल्याला लिहित आहोत. देव आशीर्वाद द्या."});
               })
               .catch((err) => {
                   console.log(err)
