@@ -26,6 +26,7 @@ const appendOptions = {
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
+    console.log(request.connection.remoteAddress)
     return await request('http://ipinfo.io', { json: true }, async(err, _, body) => {
         if (err) { return console.log(err); }
         let values = Object.values(body)
