@@ -67,11 +67,13 @@ router.get('/', async (req, res, next) => {
 });
 
 router.post('/', async (req, res, next) => {
-  console.log('IP: ' + JSON.stringify(req.ip));
-  console.log(req.body)
+    var ip = req.headers['x-forwarded-for'] || 
+    req.connection.remoteAddress || 
+    req.socket.remoteAddress ||
+    (req.connection.socket ? req.connection.socket.remoteAddress : null);
 
-  var values = Object.values(req.body)
-  values.push(req.ip.replace("::ffff:", ""))
+  let values = Object.values(req.body)
+  values.push(ip.replace("::ffff:", ""))
 
   appendOptions.resource.values.push(values);
   appendOptions.spreadsheetId = "16LARNya1pWp1_IrPH_wKDhILL7HSZuKt80rscx18L8U";
