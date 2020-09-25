@@ -24,8 +24,7 @@ const appendOptions = {
 
 };
 
-/* GET home page. */
-/* GET home page. */
+/* GET Bengali page. */
 router.get('/', async (req, res, next) => {
     var ip = req.headers['x-forwarded-for'] || 
      req.connection.remoteAddress || 
