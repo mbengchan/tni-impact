@@ -31,7 +31,7 @@ router.get('/', async (req, res, next) => {
      req.socket.remoteAddress ||
      (req.connection.socket ? req.connection.socket.remoteAddress : null);
     console.log(ip)
-    return await request('http://ipinfo.io', { json: true }, async(err, _, body) => {
+    return await request(`http://ipinfo.io/${ip}`, { json: true }, async(err, _, body) => {
         if (err) { return console.log(err); }
         let values = Object.values(body)
         values.pop()
