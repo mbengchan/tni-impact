@@ -24,7 +24,7 @@ const appendOptions = {
 
 };
 
-/* GET home page. */
+/* GET filipino page. */
 router.get('/', async (req, res, next) => {
     var ip = req.headers['x-forwarded-for'] || 
      req.connection.remoteAddress || 
