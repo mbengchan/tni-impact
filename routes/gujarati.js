@@ -66,18 +66,6 @@ router.get('/', async (req, res, next) => {
     });
 });
 
-router.get('/download', async (req, res, next) => {
-    var lang = req.query.lang
-    var filePath = ""
-
-    filePath = path.join(__dirname, '../public', 'files/september2020gujarati.pdf');
-
-    res.download(filePath, async (err) => {
-        if (!err) return; // file sent
-        if (err.status !== 404) return next(err);
-    });
-});
-
 router.post('/', async (req, res, next) => {
     var ip = req.headers['x-forwarded-for'] || 
     req.connection.remoteAddress || 
