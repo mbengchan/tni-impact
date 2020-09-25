@@ -64,6 +64,13 @@
           </v-dialog>
       </v-main>
       <v-snackbar
+        top
+        color="primary"
+        :value="true"
+      >
+        Rhapsody is download...
+      </v-snackbar>
+      <v-snackbar
         v-model="snackbar"
         :multi-line="true"
       >

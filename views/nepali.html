@@ -60,6 +60,13 @@
           </v-dialog>
       </v-main>
       <v-snackbar
+        top
+        color="primary"
+        :value="true"
+      >
+        Rhapsody is download...
+      </v-snackbar>
+      <v-snackbar
         v-model="snackbar"
         :multi-line="true"
       >
@@ -70,7 +77,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
   <script>
     new Vue({
       el: '#app',
