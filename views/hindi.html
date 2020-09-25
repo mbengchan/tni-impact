@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">पाश्चर क्रिस द्वारा धन्य है?</h2>
-                            <h4>भगवान के आदमी के बारे में अधिक जानें</h4>
+                            <h2 class="display-2">क्या आप पास्टर क्रिस के सेवकाई से आशीषीत हुए हैं?</h2>
+                            <h4>परमेश्वर के जन के बारे में और जानिए।</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
                                 <v-text-field outlined label="नाम *" v-model="name" :rules="[v => !!v || 'नाम आवश्यक है']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="ईमेल पता *" v-model="email" :rules="[
+                                <v-text-field outlined label="ईमेल *" v-model="email" :rules="[
                                 v => !!v || 'ईमेल जरुरी है',
                                 v => /.+@.+\..+/.test(v) || 'ईमेल मान्य होना चाहिए',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="फ़ोन नंबर *" v-model="phoneNumber" :rules="[v => !!v || 'फोन नंबर आवश्यक है']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="फोन नंबर *" v-model="phoneNumber" :rules="[v => !!v || 'फोन नंबर आवश्यक है']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">प्रस्तुत</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">आवेदन करे</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -92,7 +92,7 @@
       methods: {
           triggerDownload() {
             let link = document.createElement('a');
-            link.href = "/files/September 2020 Hindu Urdu Inner.pdf";
+            link.href = "/files/September 2020 Hindi Inner.pdf";
             link.download = 'September 2020 Hindu Urdu Inner.pdf';
             link.dispatchEvent(new MouseEvent('click'));
             URL.revokeObjectURL(link.href)
