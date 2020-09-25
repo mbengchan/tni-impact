@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const geoip = require('geoip-lite');
+const request = require('request');
 const {google} = require('googleapis');
 const serviceAccount = require('../service-account.json');
 
