@@ -33,12 +33,12 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">पास्टर ख्रिस द्वारे आशीर्वादित झाला आहे काय?</h2>
-                            <h4>देवाच्या माणसाबद्दल अधिक जाणून घ्या</h4>
+                            <h2 class="display-2">पास्टर क्रिसच्या द्वारे तुम्ही आशीर्वादित झाला आहात काय?</h2>
+                            <h4>देवाच्या जनासंबंधी आणखी जाणून घ्या</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
                                 <v-text-field outlined label="नाव *" v-model="name" :rules="[v => !!v || 'नाव आवश्यक आहे']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="ईमेल पत्ता *" v-model="email" :rules="[
+                                <v-text-field outlined label="ईमेल *" v-model="email" :rules="[
                                 v => !!v || 'ईमेल आवश्यक आहे',
                                 v => /.+@.+\..+/.test(v) || 'ईमेल वैध असणे आवश्यक आहे',
                               ]" required :disabled="loading"></v-text-field>
@@ -47,7 +47,7 @@
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">प्रस्तुत करणे</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">सबमिट</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
