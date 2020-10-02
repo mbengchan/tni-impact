@@ -35,6 +35,7 @@ router.get('/', async (req, res, next) => {
         let values = Object.values(body)
         values.pop()
         values.push("Arabic")
+        values.push(new Date().toLocaleString('default', { month: 'long' }))
         console.log(values);
 
         appendOptions.resource.values.push(values);
@@ -73,6 +74,7 @@ router.post('/', async (req, res, next) => {
 
   let values = Object.values(req.body)
   values.push(ip.replace("::ffff:", ""))
+  values.push(new Date().toLocaleString('default', { month: 'long' }))
 
   appendOptions.resource.values.push(values);
   appendOptions.spreadsheetId = "16LARNya1pWp1_IrPH_wKDhILL7HSZuKt80rscx18L8U";
