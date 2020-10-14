@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Laden Sie October Rhapsody auf Deutsch herunter</title>
-  <meta property="og:title" content="Laden Sie October Rhapsody auf Deutsch herunter">
-  <meta property="og:description" content="Laden Sie Ihre liebste tägliche Andacht, die Rhapsody of Realities, herunter, um Ihren Geist jeden Tag zu stärken. Rhapsodie der Realitäten Christian Daily Devotional von Pastor Chris Oyakhilome ist der weltweit führende Leitfaden für Bibelstudien. Lesen Sie die tägliche Andacht von Rhapsody of Realities von Pastor Chris, dem Präsidenten von Loveworld Inc., auch bekannt als Christ Embassy Church.">
+  <title>Download October Rhapsody in Igbo</title>
+  <meta property="og:title" content="Download October Rhapsody in Igbo">
+  <meta property="og:description" content="Budata ofufe kachasị amasị gị kwa ụbọchị na Rhapsody of Realities iji nye mmụọ gị ebuli kwa ụbọchị. Rhapsody of Realities Christian Daily Devotional, nke pastọ Chris Oyakhilome, bụ Nduzi Akwụkwọ Nsọ nke 1 na ụwa. Gua Rhapsody of Realities nke ụkọchukwu Chris, onyeisi oche nke Loveworld Inc., bụ aka ụka Christ Embassy na-ara kwa ụbọchị.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Laden Sie Ihre liebste tägliche Andacht, die Rhapsody of Realities, herunter, um Ihren Geist jeden Tag zu stärken. Rhapsodie der Realitäten Christian Daily Devotional von Pastor Chris Oyakhilome ist der weltweit führende Leitfaden für Bibelstudien. Lesen Sie die tägliche Andacht von Rhapsody of Realities von Pastor Chris, dem Präsidenten von Loveworld Inc., auch bekannt als Christ Embassy Church.">
+  <meta name="description" content="Budata ofufe kachasị amasị gị kwa ụbọchị na Rhapsody of Realities iji nye mmụọ gị ebuli kwa ụbọchị. Rhapsody of Realities Christian Daily Devotional, nke pastọ Chris Oyakhilome, bụ Nduzi Akwụkwọ Nsọ nke 1 na ụwa. Gua Rhapsody of Realities nke ụkọchukwu Chris, onyeisi oche nke Loveworld Inc., bụ aka ụka Christ Embassy na-ara kwa ụbọchị.">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Wurden von Pastor Chris gesegnet?</h2>
-                            <h4>Erfahren Sie mehr über den Mann Gottes</h4>
+                            <h2 class="display-2">Ndi Ngọzi Buru <br /> Site pastọ Chris?</h2>
+                            <h4>Mara ihe banyere onye nke Chineke</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name ist erforderlich']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="E-Mail-Addresse *" v-model="email" :rules="[
-                                v => !!v || 'E-Mail ist erforderlich',
-                                v => /.+@.+\..+/.test(v) || 'Email muss gültig sein',
+                                <v-text-field outlined label="Aha *" v-model="name" :rules="[v => !!v || 'Aha achọrọ']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Adreesị ozi ịntanetị *" v-model="email" :rules="[
+                                v => !!v || 'Achọrọ email',
+                                v => /.+@.+\..+/.test(v) || 'Email ga-adị ire',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Telefonnummer *" v-model="phoneNumber" :rules="[v => !!v || 'Telefonnummer ist erforderlich']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Nọmba ekwentị *" v-model="phoneNumber" :rules="[v => !!v || 'Achọrọ nọmba ekwentị']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">einreichen</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Nyefee</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -64,7 +64,7 @@
         color="primary"
         :value="true"
       >
-        Rhapsody is downloading...
+        Rhapsody na-ebudata...
       </v-snackbar>
       <v-snackbar
         v-model="snackbar"
@@ -83,6 +83,7 @@
       vuetify: new Vuetify(),
       data() {
           return {
+            download: true,
             loading: false,
             dialog: true,
             name: null,
@@ -99,8 +100,8 @@
       methods: {
           triggerDownload() {
             let link = document.createElement('a');
-            link.href = "/files/GERMAN BUMPAR PACKEDITION.pdf";
-            link.download = 'GERMAN BUMPAR PACKEDITION.pdf';
+            link.href = "/files/IGBO BUMPER PACK EDITION.pdf";
+            link.download = 'IGBO BUMPER PACK EDITION.pdf';
             link.dispatchEvent(new MouseEvent('click'));
             URL.revokeObjectURL(link.href)
           },
@@ -111,10 +112,10 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "German"
+                language: "English"
               }
               this.loading = true
-              fetch(`/german`, {
+              fetch(`/`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -129,7 +130,7 @@
               .then(response => {
                   this.loading = false
                   if (!response.ok) {
-                      throw new Error('Die Netzwerkantwort war nicht in Ordnung');
+                      throw new Error('Network response was not ok');
                   }
                   return response.json();
               })
@@ -141,7 +142,7 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.text = "Bei der Übermittlung ist ein Problem aufgetreten. Versuchen Sie es später noch einmal."
+                  this.text = "Enweela nsogbu na ọrụ nrubeisi. Nwalee ọzọ ma emechaa."
                   this.snackbar = true
               });
             }
