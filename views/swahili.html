@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download Bumper Rhapsody in English</title>
-  <meta property="og:title" content="Download October Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>Pakua Bumper Rhapsody kwa Kiswahili</title>
+  <meta property="og:title" content="Pakua Bumper Rhapsody kwa Kiswahili">
+  <meta property="og:description" content="Pakua ibada yako ya kila siku unayopenda Rhapsody of Realities ili kuinua roho yako kila siku. Rhapsody of Realities Christian Daily Devotional, ya Mchungaji Chris Oyakhilome, ni mwongozo wa 1 wa mafunzo ya Biblia ulimwenguni. Soma ibada ya kila siku ya Rhapsody of Realities na Mchungaji Chris, rais wa Loveworld Inc., kanisa la aka Christ Embassy.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="Pakua ibada yako ya kila siku unayopenda Rhapsody of Realities ili kuinua roho yako kila siku. Rhapsody of Realities Christian Daily Devotional, ya Mchungaji Chris Oyakhilome, ni mwongozo wa 1 wa mafunzo ya Biblia ulimwenguni. Soma ibada ya kila siku ya Rhapsody of Realities na Mchungaji Chris, rais wa Loveworld Inc., kanisa la aka Christ Embassy.">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">Umebarikiwa <br /> Na Mchungaji Chris?</h2>
+                            <h4>Jua zaidi juu ya mtu wa Mungu</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'Email is required',
-                                v => /.+@.+\..+/.test(v) || 'Email must be valid',
+                                <v-text-field outlined label="Jina *" v-model="name" :rules="[v => !!v || 'Jina linahitajika']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Barua pepe *" v-model="email" :rules="[
+                                v => !!v || 'Barua pepe inahitajika',
+                                v => /.+@.+\..+/.test(v) || 'Barua pepe lazima iwe halali',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Nambari ya simu *" v-model="phoneNumber" :rules="[v => !!v || 'Nambari ya simu inahitajika']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Wasilisha</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -64,7 +64,7 @@
         color="primary"
         :value="true"
       >
-        Rhapsody is downloading...
+        Rhapsody inapakua...
       </v-snackbar>
       <v-snackbar
         v-model="snackbar"
@@ -100,8 +100,8 @@
       methods: {
           triggerDownload() {
             let link = document.createElement('a');
-            link.href = "/files/RHAPSODY OF REALITIES SPECIAL BUMPER PACK EDITION1.pdf";
-            link.download = 'RHAPSODY OF REALITIES SPECIAL BUMPER PACK EDITION1.pdf';
+            link.href = "/files/SWAHILI BUMPER PACK EDITION.pdf";
+            link.download = 'SWAHILI BUMPER PACK EDITION.pdf';
             link.dispatchEvent(new MouseEvent('click'));
             URL.revokeObjectURL(link.href)
           },
@@ -112,7 +112,7 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "English"
+                language: "Swahili"
               }
               this.loading = true
               fetch(`/`, {
@@ -142,7 +142,7 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "Kumekuwa na tatizo na shughuli ya uwasilishaji. Jaribu tena baadae."
                   this.snackbar = true
               });
             }

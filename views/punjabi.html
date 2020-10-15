@@ -5,7 +5,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download Bumper Rhapsody in English</title>
+  <title>Download October Rhapsody in English</title>
   <meta property="og:title" content="Download October Rhapsody in English">
   <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
@@ -100,8 +100,8 @@
       methods: {
           triggerDownload() {
             let link = document.createElement('a');
-            link.href = "/files/RHAPSODY OF REALITIES SPECIAL BUMPER PACK EDITION1.pdf";
-            link.download = 'RHAPSODY OF REALITIES SPECIAL BUMPER PACK EDITION1.pdf';
+            link.href = "/files/PUNJABI BUMPER PACK EDITION.pdf";
+            link.download = 'PUNJABI BUMPER PACK EDITION.pdf';
             link.dispatchEvent(new MouseEvent('click'));
             URL.revokeObjectURL(link.href)
           },
@@ -112,7 +112,7 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "English"
+                language: "Punjabi"
               }
               this.loading = true
               fetch(`/`, {

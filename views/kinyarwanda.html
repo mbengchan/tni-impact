@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download Bumper Rhapsody in English</title>
-  <meta property="og:title" content="Download October Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>Kuramo Bumper Rhapsody in Kinyarwanda</title>
+  <meta property="og:title" content="Kuramo Bumper Rhapsody in Kinyarwanda">
+  <meta property="og:description" content="Kuramo buri munsi ukunda kwitanga Rhapsody of Realities kugirango uhe umwuka wawe buri munsi. Rhapsody of Realities Christian Daily Devotional, yanditswe na Pasiteri Chris Oyakhilome, nubuyobozi bwa mbere bwo kwiga Bibiliya kwisi. Soma Rhapsody of Realities buri munsi kwitanga kwa Pasiteri Chris, perezida wa Loveworld Inc., uzwi ku izina rya Christ Ambasade.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="Kuramo buri munsi ukunda kwitanga Rhapsody of Realities kugirango uhe umwuka wawe buri munsi. Rhapsody of Realities Christian Daily Devotional, yanditswe na Pasiteri Chris Oyakhilome, nubuyobozi bwa mbere bwo kwiga Bibiliya kwisi. Soma Rhapsody of Realities buri munsi kwitanga kwa Pasiteri Chris, perezida wa Loveworld Inc., uzwi ku izina rya Christ Ambasade.">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">Hahiriwe Na Pasiteri Chris?</h2>
+                            <h4>Menya byinshi kubyerekeye umuntu wImana</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'Email is required',
-                                v => /.+@.+\..+/.test(v) || 'Email must be valid',
+                                <v-text-field outlined label="Izina *" v-model="name" :rules="[v => !!v || 'Izina rirakenewe']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Aderesi imeri *" v-model="email" :rules="[
+                                v => !!v || 'Imeri irakenewe',
+                                v => /.+@.+\..+/.test(v) || 'Imeri igomba kuba ifite ishingiro',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Inomero ya terefone *" v-model="phoneNumber" :rules="[v => !!v || 'Numero ya terefone irakenewe']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Tanga</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -64,7 +64,7 @@
         color="primary"
         :value="true"
       >
-        Rhapsody is downloading...
+        Rhapsody iri gukuramo...
       </v-snackbar>
       <v-snackbar
         v-model="snackbar"
@@ -100,8 +100,8 @@
       methods: {
           triggerDownload() {
             let link = document.createElement('a');
-            link.href = "/files/RHAPSODY OF REALITIES SPECIAL BUMPER PACK EDITION1.pdf";
-            link.download = 'RHAPSODY OF REALITIES SPECIAL BUMPER PACK EDITION1.pdf';
+            link.href = "/files/KINYARWANDA BUMPER PACK EDITION.pdf";
+            link.download = 'KINYARWANDA BUMPER PACK EDITION.pdf';
             link.dispatchEvent(new MouseEvent('click'));
             URL.revokeObjectURL(link.href)
           },
@@ -112,7 +112,7 @@
                 email: this.email,
                 name: this.name,
                 phoneNumber: this.phoneNumber,
-                language: "English"
+                language: "Kinyarwanda"
               }
               this.loading = true
               fetch(`/`, {
@@ -142,7 +142,7 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "Habayeho ikibazo nigikorwa cyo gutanga. Gerageza nanone nyuma."
                   this.snackbar = true
               });
             }
