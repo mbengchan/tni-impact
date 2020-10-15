@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download October Rhapsody in English</title>
-  <meta property="og:title" content="Download October Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>Download Bumper Rhapsody in Zulu</title>
+  <meta property="og:title" content="Download Bumper Rhapsody in Zulu">
+  <meta property="og:description" content="Landa ukuzinikela kwakho kwansuku zonke okuthandayo iRhapsody of Realities ukuze unikeze umoya wakho usuku nosuku. I-Rhapsody of Realities Christian Daily Devotional, ebhalwe nguMfundisi uChris Oyakhilome, ingumhlahlandlela weNombolo 1 wokutadisha iBhayibheli emhlabeni. Funda ukuzinikela kwansuku zonke kweRhapsody of Realities nguMfundisi uChris, umongameli weLoveworld Inc., isonto lika-Christ Christ Embassy.">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="Landa ukuzinikela kwakho kwansuku zonke okuthandayo iRhapsody of Realities ukuze unikeze umoya wakho usuku nosuku. I-Rhapsody of Realities Christian Daily Devotional, ebhalwe nguMfundisi uChris Oyakhilome, ingumhlahlandlela weNombolo 1 wokutadisha iBhayibheli emhlabeni. Funda ukuzinikela kwansuku zonke kweRhapsody of Realities nguMfundisi uChris, umongameli weLoveworld Inc., isonto lika-Christ Christ Embassy.">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">Ngabe Ubusisiwe <br /> NguPastor Chris?</h2>
+                            <h4>Yazi kabanzi ngomuntu kaNkulunkulu</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'Email is required',
-                                v => /.+@.+\..+/.test(v) || 'Email must be valid',
+                                <v-text-field outlined label="Igama *" v-model="name" :rules="[v => !!v || 'Igama liyadingeka']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Ikheli le-imeyili *" v-model="email" :rules="[
+                                v => !!v || 'I-imeyili iyadingeka',
+                                v => /.+@.+\..+/.test(v) || 'I-imeyili kufanele ivumeleke',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Inombolo yocingo *" v-model="phoneNumber" :rules="[v => !!v || 'Inombolo yocingo iyadingeka']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Thumela</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -64,7 +64,7 @@
         color="primary"
         :value="true"
       >
-        Rhapsody is downloading...
+        I-Rhapsody iyalanda...
       </v-snackbar>
       <v-snackbar
         v-model="snackbar"
@@ -115,7 +115,7 @@
                 language: "Zulu"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/zulu`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -142,7 +142,7 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "Kube nenkinga ngomsebenzi wokuhambisa. Zama futhi emuva kwesikhathi."
                   this.snackbar = true
               });
             }

@@ -5,13 +5,13 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <title>Download October Rhapsody in English</title>
-  <meta property="og:title" content="Download October Rhapsody in English">
-  <meta property="og:description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <title>မြန်မာနိုင်ငံရှိ Bumper Rhapsody ကိုရယူပါ</title>
+  <meta property="og:title" content="မြန်မာနိုင်ငံရှိ Bumper Rhapsody ကိုရယူပါ">
+  <meta property="og:description" content="သင်၏စိတ်ကြိုက်နေ့စဉ်ရူပဗေဒဖြစ်သော Rhapsody of Realities ကိုနေ့စဉ် download ပြုလုပ်ပါ။ Rhapsody of Realities ခရစ်ယာန်ဓမ္မဆရာ Chris Oyakhilome မှ Christian Daily Devotional သည်နံပါတ် ၁ သမ္မာကျမ်းစာလေ့လာမှုလမ်းညွှန်ဖြစ်သည်။ Rhapsody of Realities နေ့စဉ်နေ့တိုင်း Loveworld Inc. ၏ဥက္ကpresident္ဌ၊ ခရစ်တော်သံရုံးဘုရားရှိခိုးကျောင်းမှခရစ်စမတ်စ်ခရစ်အားဖြင့်ကိုးကွယ်သည်ကိုဖတ်ပါ။">
   <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Download your favourite daily devotional the Rhapsody of Realities to give your spirit a lift every day. Rhapsody of Realities Christian Daily Devotional, by Pastor Chris Oyakhilome, is the No. 1 Bible study guide in the world. Read Rhapsody of Realities daily devotional by Pastor Chris, the president of Loveworld Inc., aka Christ Embassy church.">
+  <meta name="description" content="သင်၏စိတ်ကြိုက်နေ့စဉ်ရူပဗေဒဖြစ်သော Rhapsody of Realities ကိုနေ့စဉ် download ပြုလုပ်ပါ။ Rhapsody of Realities ခရစ်ယာန်ဓမ္မဆရာ Chris Oyakhilome မှ Christian Daily Devotional သည်နံပါတ် ၁ သမ္မာကျမ်းစာလေ့လာမှုလမ်းညွှန်ဖြစ်သည်။ Rhapsody of Realities နေ့စဉ်နေ့တိုင်း Loveworld Inc. ၏ဥက္ကpresident္ဌ၊ ခရစ်တော်သံရုံးဘုရားရှိခိုးကျောင်းမှခရစ်စမတ်စ်ခရစ်အားဖြင့်ကိုးကွယ်သည်ကိုဖတ်ပါ။">
 </head>
 <body>
   <div id="app">
@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Have Been Blessed <br /> By Pastor Chris?</h2>
-                            <h4>Know more about the man of God</h4>
+                            <h2 class="display-2">သင်းအုပ်ဆရာခရစ်အားဖြင့်ကောင်းကြီးမင်္ဂလာခဲ့ကြပြီလော</h2>
+                            <h4>ဘုရားသခင်၏လူအကြောင်း ထပ်၍ သိမှတ်ကြလော့</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Name *" v-model="name" :rules="[v => !!v || 'Name is required']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email address *" v-model="email" :rules="[
-                                v => !!v || 'Email is required',
-                                v => /.+@.+\..+/.test(v) || 'Email must be valid',
+                                <v-text-field outlined label="နာမည် *" v-model="name" :rules="[v => !!v || 'နာမည်လိုအပ်ပါသည်']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="အီးမေးလိပ်စာ *" v-model="email" :rules="[
+                                v => !!v || 'အီးမေးလ်လိုအပ်ပါသည်',
+                                v => /.+@.+\..+/.test(v) || 'အီးမေးလ်ကမှန်ကန်ရမယ်',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Phone number *" v-model="phoneNumber" :rules="[v => !!v || 'Phone number is required']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="ဖုန်းနံပါတ် *" v-model="phoneNumber" :rules="[v => !!v || 'ဖုန်းနံပါတ်လိုအပ်သည်']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Submit</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">တင်သွင်းပါ</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -64,7 +64,7 @@
         color="primary"
         :value="true"
       >
-        Rhapsody is downloading...
+      Rhapsody သည် download လုပ်နေသည်...
       </v-snackbar>
       <v-snackbar
         v-model="snackbar"
@@ -115,7 +115,7 @@
                 language: "Myanamr"
               }
               this.loading = true
-              fetch(`/`, {
+              fetch(`/myanmar`, {
                 method: 'POST',
                 mode: 'cors',
                 cache: 'no-cache',
@@ -142,7 +142,7 @@
               })
               .catch(error => {
                   console.error('There has been a problem with your fetch operation:', error);
-                  this.text = "There has been a problem with the submission operation. Try again later."
+                  this.text = "တင်သွင်းမှုစစ်ဆင်ရေးနှင့်အတူပြaနာတစ်ခုရှိခဲ့သည် နောက်မှထပ်ကြိုးစားပါ"
                   this.snackbar = true
               });
             }

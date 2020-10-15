@@ -18,18 +18,27 @@ const indexRouter = require('./routes/index');
 const indonesianRouter = require('./routes/indonesian');
 const italianRouter = require('./routes/italian');
 const japaneseRouter = require('./routes/japanese');
+const kinyarwandaRouter = require('./routes/kinyarwanda');
+const malagasyRouter = require('./routes/malagasy');
 const malayRouter = require('./routes/malay');
 const mandarinRouter = require('./routes/mandarin');
 const marathiRouter = require('./routes/marathi');
 const mongolianRouter = require('./routes/mongolian');
+const myanmarRouter = require('./routes/myanmar');
 const nepaliRouter = require('./routes/nepali');
 const portugueseRouter = require('./routes/portuguese');
-const russianeRouter = require('./routes/russian');
+const punjabiRouter = require('./routes/punjabi');
+const russianRouter = require('./routes/russian');
+const shonaRouter = require('./routes/shona');
 const spanishRouter = require('./routes/spanish');
+const swahiliRouter = require('./routes/swahili');
+const swedishRouter = require('./routes/swedish');
 const tamilRouter = require('./routes/tamil');
+const teluguRouter = require('./routes/telugu');
 const urduRouter = require('./routes/urdu');
 const vietnameseRouter = require('./routes/vietnamese');
 const yorubaRouter = require('./routes/yoruba');
+const zuluRouter = require('./routes/zulu');
 
 var app = express();
 
@@ -57,18 +66,27 @@ app.use('/igbo', igboRouter);
 app.use('/indonesian', indonesianRouter);
 app.use('/italian', italianRouter);
 app.use('/japanese', japaneseRouter);
+app.use('/kinyarwanda', kinyarwandaRouter);
+app.use('/malagasy', malagasyRouter);
 app.use('/malay', malayRouter);
 app.use('/mandarin', mandarinRouter);
 app.use('/marathi', marathiRouter);
 app.use('/mongolian', mongolianRouter);
+app.use('/myanmar', myanmarRouter);
 app.use('/nepali', nepaliRouter);
 app.use('/portuguese', portugueseRouter);
-app.use('/russian', russianeRouter);
+app.use('/punjabi', punjabiRouter);
+app.use('/russian', russianRouter);
+app.use('/shona', shonaRouter);
 app.use('/spanish', spanishRouter);
+app.use('/swahili', swahiliRouter);
+app.use('/swedish', swedishRouter);
 app.use('/tamil', tamilRouter);
+app.use('/telugu', teluguRouter);
 app.use('/urdu', urduRouter);
 app.use('/vietnamese', vietnameseRouter);
 app.use('/yoruba', yorubaRouter);
+app.use('/zulu', zuluRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
