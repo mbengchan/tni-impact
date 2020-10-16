@@ -12,6 +12,13 @@
   <meta property="og:url" content="https://impact.tniglobal.org">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="description" content="သင်၏စိတ်ကြိုက်နေ့စဉ်ရူပဗေဒဖြစ်သော Rhapsody of Realities ကိုနေ့စဉ် download ပြုလုပ်ပါ။ Rhapsody of Realities ခရစ်ယာန်ဓမ္မဆရာ Chris Oyakhilome မှ Christian Daily Devotional သည်နံပါတ် ၁ သမ္မာကျမ်းစာလေ့လာမှုလမ်းညွှန်ဖြစ်သည်။ Rhapsody of Realities နေ့စဉ်နေ့တိုင်း Loveworld Inc. ၏ဥက္ကpresident္ဌ၊ ခရစ်တော်သံရုံးဘုရားရှိခိုးကျောင်းမှခရစ်စမတ်စ်ခရစ်အားဖြင့်ကိုးကွယ်သည်ကိုဖတ်ပါ။">
+  <style>
+    @font-face {
+      font-family: 'Myanmar';
+      /* src: url('webfont.eot'); */
+      src: url('mmrtext.ttf')  format('truetype'); /* Safari, Android, iOS */
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -33,21 +40,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">ပါစတာခရစ်အားဖြင့် ကောင်းချီးခံစားပြီလား။</h2>
-                            <h4>ဘုရားသခင်၏လူအကြောင်းပိုမိုသိရှိရန်</h4>
+                            <h2 class="display-1" style="font-family: 'Myanmar', Fallback, sans-serif !important;">ပါစတာခရစ်အားဖြင့် ကောင်းချီးခံစားပြီလား။</h2>
+                            <h4 style="font-family: 'Myanmar', Fallback, sans-serif !important;">ဘုရားသခင်၏လူအကြောင်းပိုမိုသိရှိရန်</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="နာမည် *" v-model="name" :rules="[v => !!v || 'နာမည်လိုအပ်ပါသည်']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="အီးမေးလိပိစာ *" v-model="email" :rules="[
+                                <v-text-field outlined style="font-family: 'Myanmar', Fallback, sans-serif !important;" label="နာမည် *" v-model="name" :rules="[v => !!v || 'နာမည်လိုအပ်ပါသည်']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined style="font-family: 'Myanmar', Fallback, sans-serif !important;" label="အီးမေးလိပိစာ *" v-model="email" :rules="[
                                 v => !!v || 'အီးမေးလ်လိုအပ်ပါသည်',
                                 v => /.+@.+\..+/.test(v) || 'အီးမေးလ်ကမှန်ကန်ရမယ်',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="ဖုန်းနံပါတ် *" v-model="phoneNumber" :rules="[v => !!v || 'ဖုန်းနံပါတ်လိုအပ်သည်']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined style="font-family: 'Myanmar', Fallback, sans-serif !important;" label="ဖုန်းနံပါတ် *" v-model="phoneNumber" :rules="[v => !!v || 'ဖုန်းနံပါတ်လိုအပ်သည်']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">တင်သွင်းပါ</v-btn>
+                            <v-btn style="font-family: 'Myanmar', Fallback, sans-serif !important;" rounded block color="red" dark @click.stop="save" :loading="loading">တင်သွင်းပါ</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -63,8 +70,9 @@
         top
         color="primary"
         :value="true"
+        style="font-family: 'Myanmar', Fallback, sans-serif !important;"
       >
-      Rhapsody သည် download လုပ်နေသည်...
+        Rhapsody သည် download လုပ်နေသည်...
       </v-snackbar>
       <v-snackbar
         v-model="snackbar"
