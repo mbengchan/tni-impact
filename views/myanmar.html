@@ -33,12 +33,12 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">သင်းအုပ်ဆရာခရစ်အားဖြင့်ကောင်းကြီးမင်္ဂလာခဲ့ကြပြီလော</h2>
-                            <h4>ဘုရားသခင်၏လူအကြောင်း ထပ်၍ သိမှတ်ကြလော့</h4>
+                            <h2 class="display-2">ပါစတာခရစ်အားဖြင့် ကောင်းချီးခံစားပြီလား။</h2>
+                            <h4>ဘုရားသခင်၏လူအကြောင်းပိုမိုသိရှိရန်</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
                                 <v-text-field outlined label="နာမည် *" v-model="name" :rules="[v => !!v || 'နာမည်လိုအပ်ပါသည်']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="အီးမေးလိပ်စာ *" v-model="email" :rules="[
+                                <v-text-field outlined label="အီးမေးလိပိစာ *" v-model="email" :rules="[
                                 v => !!v || 'အီးမေးလ်လိုအပ်ပါသည်',
                                 v => /.+@.+\..+/.test(v) || 'အီးမေးလ်ကမှန်ကန်ရမယ်',
                               ]" required :disabled="loading"></v-text-field>
