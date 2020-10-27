@@ -33,21 +33,21 @@
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Hahiriwe Na Pasiteri Chris?</h2>
-                            <h4>Menya byinshi kubyerekeye umuntu wImana</h4>
+                            <h2 class="display-2">Wahawe umugisha na Pastor Chris?</h2>
+                            <h4>Rushaho kumumenya</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Izina *" v-model="name" :rules="[v => !!v || 'Izina rirakenewe']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Aderesi imeri *" v-model="email" :rules="[
+                                <v-text-field outlined label="Amazina *" v-model="name" :rules="[v => !!v || 'Izina rirakenewe']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Email *" v-model="email" :rules="[
                                 v => !!v || 'Imeri irakenewe',
                                 v => /.+@.+\..+/.test(v) || 'Imeri igomba kuba ifite ishingiro',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Inomero ya terefone *" v-model="phoneNumber" :rules="[v => !!v || 'Numero ya terefone irakenewe']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Telefone *" v-model="phoneNumber" :rules="[v => !!v || 'Numero ya terefone irakenewe']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Tanga</v-btn>
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Ohereza</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
