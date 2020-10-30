@@ -12,50 +12,44 @@
   <meta property="og:url" content="https://impact.tniglobal.org/yoruba">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="description" content="Ṣe igbasilẹ ifọkanbalẹ ojoojumọ rẹ ayanfẹ Rhapsody of Realities lati fun ẹmi rẹ ni igbega ni gbogbo ọjọ. Rhapsody of Realities Christian Daily Devotional, nipasẹ Olusoagutan Chris Oyakhilome, ni NỌ 1 itọsọna Bibeli ikẹkọọ ni agbaye. Ka Rhapsody of Realities ojoojumọ devotional nipasẹ Aguntan Chris, Alakoso Loveworld Inc., aka ijo Kristi Embassy.">
+  <style>
+    @font-face {
+      font-family: 'Yoruba';
+      /* src: url('webfont.eot'); */
+      src: url('switzerl.ttf')  format('truetype'); /* Safari, Android, iOS */
+    }
+  </style>
 </head>
 <body>
   <div id="app">
     <v-app>
       <v-main>
-        <!-- <v-container>Hello world</v-container> -->
-
         <v-dialog v-model="dialog" persistent>
             <v-card width="100hv">
-                <!-- <v-toolbar dark color="primary">
-                    <v-toolbar-title>Thank You For Downloading Rhapsody of Realities</v-toolbar-title>
-                </v-toolbar> -->
-                <!-- <v-card-title>
-                    <span class="headline">Want To Know More About Pastor Chris?</span>
-                </v-card-title> -->
                 <v-layout row wrap>
                     <v-flex md7 sm12 xs12>
                         <v-img src="/images/pastor-chris.png" height="100%" />
                     </v-flex>
                     <v-flex md5 sm12 xs12>
                         <v-card-text class="text-center px-8">
-                            <h2 class="display-2">ǸJ!  O TI DI CNI *B^K%N <br/> N&PASC <br /> OLÙSỌ́ ÀGÙTÀN CHRIS?</h2>
-                            <h4>M[ d72 s7 i n7pa 0j7s1 {l-run</h4>
+                            <h2 class="display-1" style="font-family: 'Yoruba', Fallback, sans-serif !important;">ǸJ!  O TI DI CNI *B^K%N <br/> N&PASC <br /> OLÙSỌ́ ÀGÙTÀN CHRIS?</h2>
+                            <h4 style="font-family: 'Yoruba', Fallback, sans-serif !important;">M[ d72 s7 i n7pa 0j7s1 {l-run</h4>
 
                             <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="OR^K{ *" v-model="name" :rules="[v => !!v || 'Orukọ nilo']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="ÍMEÈLI *" v-model="email" :rules="[
+                                <v-text-field outlined style="font-family: 'Yoruba', Fallback, sans-serif !important;" label="OR^K{ *" v-model="name" :rules="[v => !!v || 'Orukọ nilo']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined style="font-family: 'Yoruba', Fallback, sans-serif !important;" label="ÍMEÈLI *" v-model="email" :rules="[
                                 v => !!v || 'E-mail nilo',
                                 v => /.+@.+\..+/.test(v) || 'Imeeli gbọdọ jẹ deede',
                               ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="N_ḾBZ F()N^ *" v-model="phoneNumber" :rules="[v => !!v || 'Nọmba foonu nilo']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined style="font-family: 'Yoruba', Fallback, sans-serif !important;" label="N_ḾBZ F()N^ *" v-model="phoneNumber" :rules="[v => !!v || 'Nọmba foonu nilo']" required :disabled="loading"></v-text-field>
                             </v-form>
                         </v-card-text>
 
                         <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Fi rqns1</v-btn>
+                            <v-btn rounded block color="red" style="font-family: 'Yoruba', Fallback, sans-serif !important;" dark @click.stop="save" :loading="loading">Fi rqns1</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
-                <!-- <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="red darken-1" text @click="dialog = false">No</v-btn>
-                    <v-btn color="green darken-1" text @click="dialog = false">Yes</v-btn>
-                </v-card-actions> -->
             </v-card>
           </v-dialog>
       </v-main>
