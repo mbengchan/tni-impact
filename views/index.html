@@ -17,62 +17,53 @@
   <div id="app">
     <v-app>
       <v-main>
-        <!-- <v-container>Hello world</v-container> -->
+        <v-responsive height="100hv">
+          <v-layout fill-height justify-center align-center>
+            <v-flex md7 sm12 xs12 class="hidden-sm-and-down">
+              <v-img src="/images/pastor-chris.png" height="100vh" />
+            </v-flex>
+            <v-flex md5 sm12 xs12>
+              <v-responsive height="100vh">
+                <v-layout fill-height justify-center align-center>
+                  <v-card flat color="transparent">
+                    <v-card-text class="px-8">
+                      <h2 class="display-2 text-center mb-8">About TNI</h2>
+                      <!-- <h4>Know more about the man of God</h4> -->
 
-        <v-dialog v-model="dialog" persistent>
-            <v-card width="100hv">
-                <v-layout row wrap>
-                    <v-flex md7 sm12 xs12>
-                        <v-img src="/images/pastor-chris.png" height="100%" />
-                    </v-flex>
-                    <v-flex md5 sm12 xs12>
-                      <v-responsive height="100vh">
-                        <v-layout fill-height justify-center align-center>
-                          <v-card flat color="transparent">
-                            <v-card-text class="px-8">
-                              <h2 class="display-2 text-center mb-8">About TNI</h2>
-                              <!-- <h4>Know more about the man of God</h4> -->
-      
-                              <p>
-                                The <a target="_Blank" href="https://tniglobal.org">Translators’ Network International (TNI)</a> is a network of Translators 
-                                and inspired individuals who ensure that the works and messages of Pastor 
-                                Chris Oyakhilome are available and accessible in the language best understood 
-                                by people. Beyond translating, the Network strives to distribute the divine verities 
-                                the gospel of Jesus offered through different platforms – and in the languages best 
-                                understood by the people.
-                              </p>
-      
-                              <p>
-                                From the inception of the Rhapsody of Realities Translations with the first ever German 
-                                Translation in 2002, the ‘Messenger Angel’ like a flicker of light, began the journey of 
-                                touching lives, one person at a time in the language they understand best.
-                              </p>
-      
-                              <p>
-                                <strong>
-                                  Thus, with a passion to reach every tribe and tongue, the Messenger Angel was translated into other languages
-                                </strong>
-                              </p>
-                                  
-                            </v-card-text>
-      
-                            <v-card-actions class="px-8">
-                              <v-btn class="text-capitalize" color="primary" dark href="https://tniglobal.org/join-the-team">Join TNI</v-btn>
-                              <v-spacer></v-spacer>
-                              <v-btn class="text-capitalize" color="green" dark href="https://ipartner.tniglobal.org">Partner with TNI</v-btn>
-                            </v-card-actions>
-                          </v-card>
-                        </v-layout>
-                      </v-responsive>
-                    </v-flex>
-                </v-layout>
-                <!-- <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="red darken-1" text @click="dialog = false">No</v-btn>
-                    <v-btn color="green darken-1" text @click="dialog = false">Yes</v-btn>
-                </v-card-actions> -->
-            </v-card>
-          </v-dialog>
+                      <p>
+                          The <a target="_Blank" href="https://tniglobal.org">Translators’ Network International (TNI)</a> is a network of Translators 
+                          and inspired individuals who ensure that the works and messages of Pastor 
+                          Chris Oyakhilome are available and accessible in the language best understood 
+                          by people. Beyond translating, the Network strives to distribute the divine verities 
+                          the gospel of Jesus offered through different platforms – and in the languages best 
+                          understood by the people.
+                        </p>
+
+                        <p>
+                          From the inception of the Rhapsody of Realities Translations with the first ever German 
+                          Translation in 2002, the ‘Messenger Angel’ like a flicker of light, began the journey of 
+                          touching lives, one person at a time in the language they understand best.
+                        </p>
+
+                        <p>
+                          <strong>
+                            Thus, with a passion to reach every tribe and tongue, the Messenger Angel was translated into other languages
+                          </strong>
+                        </p>
+                            
+                      </v-card-text>
+
+                      <v-card-actions class="px-8">
+                        <v-btn class="text-capitalize" color="primary" dark href="https://tniglobal.org/join-the-team">Join TNI</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn class="text-capitalize" color="green" dark href="https://ipartner.tniglobal.org">Partner with TNI</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-layout>
+                </v-responsive>
+              </v-flex>
+          </v-layout>
+        </v-responsive>
       </v-main>
       <v-snackbar
         top
