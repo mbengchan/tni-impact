@@ -41,6 +41,10 @@ const urduRouter = require('./routes/urdu');
 const vietnameseRouter = require('./routes/vietnamese');
 const yorubaRouter = require('./routes/yoruba');
 const zuluRouter = require('./routes/zulu');
+const dutchRouter = require('./routes/dutch');
+const finnishRouter = require('./routes/finnish');
+const greekRouter = require('./routes/greek');
+const norwegianRouter = require('./routes/norwegian');
 
 // New Regstration Routes
 const registerRouter = require('./routes/register');
@@ -103,6 +107,10 @@ app.use('/urdu', urduRouter);
 app.use('/vietnamese', vietnameseRouter);
 app.use('/yoruba', yorubaRouter);
 app.use('/zulu', zuluRouter);
+app.use('/dutch', dutchRouter);
+app.use('/finnish', finnishRouter);
+app.use('/greek', greekRouter);
+app.use('/norwegian', norwegianRouter);
 
 // Register New Registration Routes
 app.use('/api/register', registerRouter);

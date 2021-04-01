@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Télécharger Rhapsodie de septembre en français</title>
+  <meta property="og:title" content="Télécharger Rhapsodie de septembre en français">
+  <meta property="og:description" content="Téléchargez votre dévotion quotidienne préférée, la Rhapsodie des réalités, pour donner un coup de pouce à votre esprit chaque jour. Rhapsody of Realities Christian Daily Devotional, par le pasteur Chris Oyakhilome, est le guide d'étude biblique n ° 1 dans le monde. Lisez la dévotion quotidienne Rhapsody of Realities par le pasteur Chris, le président de Loveworld Inc., alias l'église Christ Embassy.">
+  <meta property="og:image" content="https://impact.tniglobal.org/logo.png">
+  <meta property="og:url" content="https://impact.tniglobal.org/french">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="Téléchargez votre dévotion quotidienne préférée, la Rhapsodie des réalités, pour donner un coup de pouce à votre esprit chaque jour. Rhapsody of Realities Christian Daily Devotional, par le pasteur Chris Oyakhilome, est le guide d'étude biblique n ° 1 dans le monde. Lisez la dévotion quotidienne Rhapsody of Realities par le pasteur Chris, le président de Loveworld Inc., alias l'église Christ Embassy.">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <!-- <v-container>Hello world</v-container> -->
+
+        <v-dialog v-model="dialog" persistent>
+            <v-card width="100hv">
+                <!-- <v-toolbar dark color="primary">
+                    <v-toolbar-title>Thank You For Downloading Rhapsody of Realities</v-toolbar-title>
+                </v-toolbar> -->
+                <!-- <v-card-title>
+                    <span class="headline">Want To Know More About Pastor Chris?</span>
+                </v-card-title> -->
+                <v-layout row wrap>
+                    <v-flex md7 sm12 xs12>
+                        <v-img src="/images/pastor-chris.png" height="100%" />
+                    </v-flex>
+                    <v-flex md5 sm12 xs12>
+                        <v-card-text class="text-center px-8">
+                            <h2 class="display-2">Avez-vous été béni <br /> par le pasteur Chris?</h2>
+                            <h4>En savoir plus sur l'homme de Dieu</h4>
+
+                            <v-form class="pt-6" ref="form" :lazy-validation="lazy">
+                                <v-text-field outlined label="Nom *" v-model="name" :rules="[v => !!v || 'Le nom est requis']" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Adresse e-mail *" v-model="email" :rules="[
+                                v => !!v || 'Email est requis',
+                                v => /.+@.+\..+/.test(v) || 'L\'email doit être valide',
+                              ]" required :disabled="loading"></v-text-field>
+                                <v-text-field outlined label="Numéro de téléphone *" v-model="phoneNumber" :rules="[v => !!v || 'Le numéro de téléphone est requis']" required :disabled="loading"></v-text-field>
+                            </v-form>
+                        </v-card-text>
+
+                        <v-card-actions class="px-12 mb-5 mx-12">
+                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Soumettre</v-btn>
+                        </v-card-actions>
+                    </v-flex>
+                </v-layout>
+                <!-- <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="red darken-1" text @click="dialog = false">No</v-btn>
+                    <v-btn color="green darken-1" text @click="dialog = false">Yes</v-btn>
+                </v-card-actions> -->
+            </v-card>
+          </v-dialog>
+      </v-main>
+      <v-snackbar
+        top
+        color="primary"
+        :value="true"
+      >
+        Rhapsody is downloading...
+      </v-snackbar>
+      <v-snackbar
+        v-model="snackbar"
+        :multi-line="true"
+      >
+        {{text}}
+      </v-snackbar>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+          return {
+            loading: false,
+            dialog: true,
+            name: null,
+            email: null,
+            lazy: false,
+            text: null,
+            snackbar: false,
+            phoneNumber: null
+          }
+      },
+      created() {
+        this.triggerDownload()
+      },
+      methods: {
+          triggerDownload() {
+            let link = document.createElement('a');
+            link.href = "/files/SPECIAL FRENCH 6 MONTH EDITION.pdf";
+            link.download = 'SPECIAL FRENCH 6 MONTH EDITION.pdf';
+            link.dispatchEvent(new MouseEvent('click'));
+            URL.revokeObjectURL(link.href)
+          },
+
+          save() {
+            if(this.$refs.form.validate()) {
+              const data = {
+                email: this.email,
+                name: this.name,
+                phoneNumber: this.phoneNumber,
+                language: "French"
+              }
+              this.loading = true
+              fetch(`/french`, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                  'Content-Type': 'application/json'
+                  // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+              })
+              .then(response => {
+                  this.loading = false
+                  if (!response.ok) {
+                      throw new Error('La réponse du réseau n\'était pas correcte');
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                this.text = data.message
+                this.snackbar = true
+                this.$refs.form.reset()
+                  console.log(data)
+              })
+              .catch(error => {
+                  console.error('There has been a problem with your fetch operation:', error);
+                  this.text = "Il y a eu un problème avec l'opération de soumission. Réessayez plus tard."
+                  this.snackbar = true
+              });
+            }
+          }
+      }
+    })
+  </script>
+</body>
+</html>
