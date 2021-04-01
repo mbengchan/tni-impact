@@ -24,7 +24,7 @@ const appendOptions = {
 
 };
 
-/* GET french page. */
+/* GET greek page. */
 router.get('/', async (req, res, next) => {
     var ip = req.headers['x-forwarded-for'] || 
      req.connection.remoteAddress || 
@@ -50,19 +50,19 @@ router.get('/', async (req, res, next) => {
                     .then((result) => {
                         appendOptions.resource.values = [];
                         console.log("success")
-                        return res.sendFile(path.join(__dirname, '../views', 'french.html'));
+                        return res.sendFile(path.join(__dirname, '../views', 'greek.html'));
                     })
                     .catch((err) => {
                         console.log(err)
                         appendOptions.resource.values = [];
-                        return res.sendFile(path.join(__dirname, '../views', 'french.html'));
+                        return res.sendFile(path.join(__dirname, '../views', 'greek.html'));
                     })
             })
             .catch((error) => {
                 console.log(error);
                 appendOptions.resource.values = [];
 
-                res.sendFile(path.join(__dirname, '../views', 'french.html'));
+                res.sendFile(path.join(__dirname, '../views', 'greek.html'));
             })
     });
 });
