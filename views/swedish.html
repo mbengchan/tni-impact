@@ -17,47 +17,50 @@
   <div id="app">
     <v-app>
       <v-main>
-        <!-- <v-container>Hello world</v-container> -->
+        <v-responsive height="100hv">
+          <v-layout fill-height justify-center align-center>
+            <v-flex md7 sm12 xs12 class="hidden-sm-and-down">
+              <v-img src="/images/pastor-chris.png" height="100vh" />
+            </v-flex>
+            <v-flex md5 sm12 xs12>
+              <v-responsive height="100vh">
+                <v-layout fill-height justify-center align-center>
+                  <v-card flat color="transparent">
+                    <v-card-text class="px-8">
+                      <h2 class="display-2 text-center mb-8">Om TNI</h2>
+                      <p>
+                        <a target="_Blank" href="https://tniglobal.org"> Translators 'Network International (TNI) </a> 
+                        är ett nätverk av översättare och inspirerade individer som ser till att pastorn Chris Oyakhilome 
+                        fungerar och meddelanden är tillgängliga och tillgängliga på det språk som människor förstår bäst. 
+                        Utöver översättningen strävar nätverket efter att distribuera de gudomliga sanningar som evangeliet 
+                        om Jesus erbjuds via olika plattformar - och på de språk som bäst förstås av folket.
+                      </p>
 
-        <v-dialog v-model="dialog" persistent>
-            <v-card width="100hv">
-                <!-- <v-toolbar dark color="primary">
-                    <v-toolbar-title>Thank You For Downloading Rhapsody of Realities</v-toolbar-title>
-                </v-toolbar> -->
-                <!-- <v-card-title>
-                    <span class="headline">Want To Know More About Pastor Chris?</span>
-                </v-card-title> -->
-                <v-layout row wrap>
-                    <v-flex md7 sm12 xs12>
-                        <v-img src="/images/pastor-chris.png" height="100%" />
-                    </v-flex>
-                    <v-flex md5 sm12 xs12>
-                        <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Har du välsignats <br /> av pastor Chris?</h2>
-                            <h4>Lär dig mer om Guds man</h4>
+                        <p>
+                          Från och med starten av Rhapsody of Realities Translations med den allra första tyska översättningen 
+                          2002 började "Messenger Angel" som ett flimmer av ljus, resan för att beröra liv, en person i taget på 
+                          det språk de förstår bäst.
+                        </p>
 
-                            <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="namn *" v-model="name" :rules="[v => !!v || 'Namn krävs']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="E-postadress *" v-model="email" :rules="[
-                                v => !!v || 'E-post krävs',
-                                v => /.+@.+\..+/.test(v) || 'Email måste vara giltig',
-                              ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Telefonnummer *" v-model="phoneNumber" :rules="[v => !!v || 'Telefonnummer krävs']" required :disabled="loading"></v-text-field>
-                            </v-form>
-                        </v-card-text>
+                        <p>
+                          <strong>
+                            Således, med en passion för att nå varje stam och tunga, översändes Messenger Angel till andra språk
+                          </strong>
+                        </p>
+                            
+                      </v-card-text>
 
-                        <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Skicka in</v-btn>
-                        </v-card-actions>
-                    </v-flex>
-                </v-layout>
-                <!-- <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="red darken-1" text @click="dialog = false">No</v-btn>
-                    <v-btn color="green darken-1" text @click="dialog = false">Yes</v-btn>
-                </v-card-actions> -->
-            </v-card>
-          </v-dialog>
+                      <v-card-actions class="px-8">
+                        <v-btn class="text-capitalize" color="primary" dark href="https://tniglobal.org/join-the-team">Gå med i TNI</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn class="text-capitalize" color="green" dark href="https://ipartner.tniglobal.org">Partner med TNI</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-layout>
+                </v-responsive>
+              </v-flex>
+          </v-layout>
+        </v-responsive>
       </v-main>
       <v-snackbar
         top
