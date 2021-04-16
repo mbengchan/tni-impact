@@ -17,54 +17,59 @@
   <div id="app">
     <v-app>
       <v-main>
-        <!-- <v-container>Hello world</v-container> -->
+        <v-responsive height="100hv">
+          <v-layout fill-height justify-center align-center>
+            <v-flex md7 sm12 xs12 class="hidden-sm-and-down">
+              <v-img src="/images/impact-europe.jpeg" height="100vh" />
+            </v-flex>
+            <v-flex md5 sm12 xs12>
+              <v-responsive height="100vh">
+                <v-layout fill-height justify-center align-center>
+                  <v-card flat color="transparent">
+                    <v-card-text class="px-8">
+                      <h2 class="display-2 text-center mb-8">Ibyerekeye TNI</h2>
+                      <p>
+                        <a target="_Blank" href="https://tniglobal.org"> Umuyoboro mpuzamahanga w'abasemuzi (TNI) </a> 
+                        ni urusobe rw'abasemuzi kandi yahumekeye abantu bemeza ko imirimo n'ubutumwa bwa Pasiteri
+                        Chris Oyakhilome arahari kandi aragerwaho mururimi rwunvikana neza
+                        n'abantu. Usibye guhindura, Umuyoboro uharanira gukwirakwiza ukuri kwimana
+                        ubutumwa bwiza bwa Yesu bwatanze binyuze mumahuriro atandukanye - no mundimi nziza
+                        byumvikanyweho nabantu.
+                        </p>
 
-        <v-dialog v-model="dialog" persistent>
-            <v-card width="100hv">
-                <!-- <v-toolbar dark color="primary">
-                    <v-toolbar-title>Thank You For Downloading Rhapsody of Realities</v-toolbar-title>
-                </v-toolbar> -->
-                <!-- <v-card-title>
-                    <span class="headline">Want To Know More About Pastor Chris?</span>
-                </v-card-title> -->
-                <v-layout row wrap>
-                    <v-flex md7 sm12 xs12>
-                        <v-img src="/images/impact-europe.jpeg" height="100%" />
-                    </v-flex>
-                    <v-flex md5 sm12 xs12>
-                        <v-card-text class="text-center px-8">
-                            <h2 class="display-2">Wahawe umugisha na Pastor Chris?</h2>
-                            <h4>Rushaho kumumenya</h4>
+                        <p>
+                          Kuva Rhapsody of Realities Translations hamwe numudage wambere
+                           Ubuhinduzi mu 2002, 'Intumwa Umumarayika' nk'urumuri rwinshi, yatangiye urugendo rwa
+                           gukora ku buzima, umuntu umwe icyarimwe mururimi bumva neza.
+                        </p>
 
-                            <v-form class="pt-6" ref="form" :lazy-validation="lazy">
-                                <v-text-field outlined label="Amazina *" v-model="name" :rules="[v => !!v || 'Izina rirakenewe']" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Email *" v-model="email" :rules="[
-                                v => !!v || 'Imeri irakenewe',
-                                v => /.+@.+\..+/.test(v) || 'Imeri igomba kuba ifite ishingiro',
-                              ]" required :disabled="loading"></v-text-field>
-                                <v-text-field outlined label="Telefone *" v-model="phoneNumber" :rules="[v => !!v || 'Numero ya terefone irakenewe']" required :disabled="loading"></v-text-field>
-                            </v-form>
-                        </v-card-text>
+                        <p>
+                          <strong>
+                            Rero, hamwe nishyaka ryo kugera mumiryango yose nururimi, 
+                            umumarayika wintumwa yahinduwe mundimi zindi
+                          </strong>
+                        </p>
+                            
+                      </v-card-text>
 
-                        <v-card-actions class="px-12 mb-5 mx-12">
-                            <v-btn rounded block color="red" dark @click.stop="save" :loading="loading">Ohereza</v-btn>
-                        </v-card-actions>
-                    </v-flex>
-                </v-layout>
-                <!-- <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="red darken-1" text @click="dialog = false">No</v-btn>
-                    <v-btn color="green darken-1" text @click="dialog = false">Yes</v-btn>
-                </v-card-actions> -->
-            </v-card>
-          </v-dialog>
+                      <v-card-actions class="px-8">
+                        <v-btn class="text-capitalize" color="primary" dark href="https://tniglobal.org/join-the-team">Injira muri TNI</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn class="text-capitalize" color="green" dark href="https://ipartner.tniglobal.org">Umufatanyabikorwa na TNI</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-layout>
+                </v-responsive>
+              </v-flex>
+          </v-layout>
+        </v-responsive>
       </v-main>
       <v-snackbar
         top
         color="primary"
         :value="true"
       >
-        Rhapsody iri gukuramo...
+        Rhapsody arimo gukuramo ...
       </v-snackbar>
       <v-snackbar
         v-model="snackbar"
@@ -100,8 +105,8 @@
       methods: {
           triggerDownload() {
             let link = document.createElement('a');
-            link.href = "/files/KINYARWANDA BUMPER PACK EDITION.pdf";
-            link.download = 'KINYARWANDA BUMPER PACK EDITION.pdf';
+            link.href = "/files/April 2021 Kinyarwanda Inner.pdf";
+            link.download = 'April 2021 Kinyarwanda Inner.pdf';
             link.dispatchEvent(new MouseEvent('click'));
             URL.revokeObjectURL(link.href)
           },
